@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <url>https://github.com/jeap-admin-ch/jeap-internal-spring-boot-parent</url>
+    <scm>
+        <url>https://github.com/jeap-admin-ch/jeap-internal-spring-boot-parent</url>
+    </scm>
+    <developers>
+        <developer>
+            <name>BIT</name>
+            <organization>Federal Office of Information Technology, Systems and Telecommunication FOITT</organization>
+            <organizationUrl>https://www.bit.admin.ch/</organizationUrl>
+        </developer>
+    </developers>
+    
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <!-- Also update the property spring-boot.version! -->
+        <version>3.3.5</version>
+    </parent>
+
+    <groupId>ch.admin.bit.jeap</groupId>
+    <artifactId>jeap-internal-spring-boot-parent</artifactId>
+    <version>5.2.5-SNAPSHOT</version>
+    <name>jeap-internal-spring-boot-parent</name>
+    <description>
+        A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
+    </description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>21</java.version>
+        <maven.compiler.release>21</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Also update the spring-boot-dependencies parent version! -->
+        <spring-boot.version>3.3.5</spring-boot.version>
+        <spring-cloud.version>2023.0.3</spring-cloud.version>
+        <spring-security-oauth2-authorization-server.version>1.3.2</spring-security-oauth2-authorization-server.version>
+        <lombok.version>1.18.34</lombok.version>
+        <lombok.maven.version>1.18.20.0</lombok.maven.version>
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-javadoc-plugin.version>3.10.0</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+        <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
+        <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
+        <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
+        <shedlock.version>4.44.0</shedlock.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
+        <exec-maven-plugin.version>3.4.1</exec-maven-plugin.version>
+        <pact-jvm.version>4.6.7</pact-jvm.version>
+        <togglz.version>4.0.1</togglz.version>
+        <aws.sdk.version>2.20.91</aws.sdk.version>
+        <spring-cloud-aws.version>3.0.2</spring-cloud-aws.version>
+        <bcpkix-jdk18on.version>1.77</bcpkix-jdk18on.version>
+        <bcprov-jdk18on.version>1.77</bcprov-jdk18on.version>
+        <!-- Test config -->
+        <skip.surefire.tests>false</skip.surefire.tests>
+        <skip.failsafe.tests>false</skip.failsafe.tests>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <jeap.pact.provider.consumerversionselectors.raw>[{"mainBranch":true}, {"matchingBranch": true}, {"deployedOrReleased": true}]</jeap.pact.provider.consumerversionselectors.raw>
+        <version-bump-postfix>-SNAPSHOT</version-bump-postfix>
+        <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
+        <org.codehaus.mojo-license-maven-plugin.version>2.4.0</org.codehaus.mojo-license-maven-plugin.version>
+        <jeap-license-template.version>1.0.2</jeap-license-template.version>
+    </properties>
+
+    <profiles>
+        <!-- Profile for enabling the publishing of contracts and verification results in consumer driven contract tests
+             during a toolchain pipeline build on Jenkins -->
+        <profile>
+            <id>cdct-enable-publishing-jenkins</id>
+            <activation>
+                <property>
+                    <!-- Automatic activation of the profile when a build is run by the toolchain build pipeline on Jenkins.
+                         This is a bit of a hack. We base the activation of this profile on the existence of a property
+                         that is set by the maven settings.xml used by the toolchain build pipeline. This allows adding
+                         the Pact configuration to builds without the need for changing the toolchain build pipeline.
+                         We plan to create our own build pipeline soon and Pact will then be built into the build
+                         pipeline directly. -->
+                    <name>releaseRepositoryId</name>
+                </property>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <!-- Enabling the publishing of consumer contracts -->
+                        <plugin>
+                            <groupId>au.com.dius.pact.provider</groupId>
+                            <artifactId>maven</artifactId>
+                            <version>${pact-jvm.version}</version>
+                            <configuration>
+                                <skipPactPublish>false</skipPactPublish>
+                            </configuration>
+                        </plugin>
+                        <!-- Enabling the publishing of provider contract verifications -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <configuration>
+                                <systemPropertyVariables>
+                                    <pact.verifier.publishResults>true</pact.verifier.publishResults>
+                                </systemPropertyVariables>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+        <!-- Profile for enabling the publishing of contracts and verification results in consumer driven contract tests
+             durint local builds -->
+        <profile>
+            <id>cdct-enable-publishing-local</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <!-- Enabling the publishing of consumer contracts -->
+                        <plugin>
+                            <groupId>au.com.dius.pact.provider</groupId>
+                            <artifactId>maven</artifactId>
+                            <version>${pact-jvm.version}</version>
+                            <configuration>
+                                <skipPactPublish>false</skipPactPublish>
+                            </configuration>
+                        </plugin>
+                        <!-- Enabling the publishing of provider contract verifications -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <configuration>
+                                <systemPropertyVariables>
+                                    <pact.verifier.publishResults>true</pact.verifier.publishResults>
+                                </systemPropertyVariables>
+                            </configuration>
+                        </plugin>
+                        <!-- Making sure that the repository is not dirty, i.e. that the git commit hash appended to consumer
+                         and provider versions is valid -->
+                        <plugin>
+                            <groupId>pl.project13.maven</groupId>
+                            <artifactId>git-commit-id-plugin</artifactId>
+                            <version>${git-commit-id-plugin.version}</version>
+                            <executions>
+                                <execution>
+                                    <id>check-git-not-dirty</id>
+                                    <goals>
+                                        <goal>validateRevision</goal>
+                                    </goals>
+                                    <phase>compile</phase>
+                                    <configuration>
+                                        <validationProperties>
+                                            <validationProperty>
+                                                <name>validating git dirty</name>
+                                                <value>${git.dirty}</value>
+                                                <shouldMatchTo>false</shouldMatchTo>
+                                            </validationProperty>
+                                        </validationProperties>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+        <!-- Bump patch version X to X+1 (n.n.X). Usage: mvn -Pbump-patch-version -N validate -->
+        <profile>
+            <id>bump-patch-version</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                        <version>${build-helper-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>parse-version-as-input-to-increase-version</id>
+                                <goals>
+                                    <goal>parse-version</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>versions-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>increase-version</id>
+                                <goals>
+                                    <goal>set</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <newVersion>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}${version-bump-postfix}</newVersion>
+                                    <generateBackupPoms>false</generateBackupPoms>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- Bump minor version X to X+1 (n.X.n). Usage: mvn -Pbump-minor-version -N validate -->
+        <profile>
+            <id>bump-minor-version</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                        <version>${build-helper-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>parse-version-as-input-to-increase-version</id>
+                                <goals>
+                                    <goal>parse-version</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>versions-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>increase-version</id>
+                                <goals>
+                                    <goal>set</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <newVersion>${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.0${version-bump-postfix}</newVersion>
+                                    <generateBackupPoms>false</generateBackupPoms>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- Bump major version X to X+1 (X.n.n). Usage: mvn -Pbump-major-version -N validate -->
+        <profile>
+            <id>bump-major-version</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                        <version>${build-helper-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>parse-version-as-input-to-increase-version</id>
+                                <goals>
+                                    <goal>parse-version</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>versions-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>increase-version</id>
+                                <goals>
+                                    <goal>set</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <newVersion>${parsedVersion.nextMajorVersion}.0.0${version-bump-postfix}</newVersion>
+                                    <generateBackupPoms>false</generateBackupPoms>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>internal-parent-build-only</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <!-- Check third-party license compliance -->
+                    <plugin>
+                        <groupId>org.honton.chas</groupId>
+                        <artifactId>license-maven-plugin</artifactId>
+                    </plugin>
+                    <!-- Generate third-party license list -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>license-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <!-- General dependencies for all projects -->
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.javacrumbs.shedlock</groupId>
+                <artifactId>shedlock-spring</artifactId>
+                <version>${shedlock.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.javacrumbs.shedlock</groupId>
+                <artifactId>shedlock-provider-jdbc-template</artifactId>
+                <version>${shedlock.version}</version>
+            </dependency>
+
+            <!-- SPRING -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-authorization-server</artifactId>
+                <version>${spring-security-oauth2-authorization-server.version}</version>
+            </dependency>
+
+            <!-- Togglz-->
+            <dependency>
+                <groupId>org.togglz</groupId>
+                <artifactId>togglz-spring-boot-starter</artifactId>
+                <version>${togglz.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.togglz</groupId>
+                <artifactId>togglz-spring-security</artifactId>
+                <version>${togglz.version}</version>
+            </dependency>
+
+            <!-- PACT -->
+            <dependency>
+                <groupId>au.com.dius.pact.consumer</groupId>
+                <artifactId>junit5</artifactId>
+                <version>${pact-jvm.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>au.com.dius.pact.provider</groupId>
+                <artifactId>junit5</artifactId>
+                <version>${pact-jvm.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Bouncy Castle -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk18on</artifactId>
+                <version>${bcpkix-jdk18on.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk18on</artifactId>
+                <version>${bcprov-jdk18on.version}</version>
+            </dependency>
+
+            <!-- AWS SDK -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>bom</artifactId>
+                <version>${aws.sdk.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud AWS -->
+            <dependency>
+                <groupId>io.awspring.cloud</groupId>
+                <artifactId>spring-cloud-aws-dependencies</artifactId>
+                <version>${spring-cloud-aws.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>build-info</goal>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <parameters>true</parameters>
+                        <compilerArgs>
+                            <arg>-Xlint:unchecked</arg>
+                            <arg>-Xlint:deprecation</arg>
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <skipTests>${skip.surefire.tests}</skipTests>
+                        <!-- see: https://stackoverflow.com/questions/53010200/maven-surefire-could-not-find-forkedbooter-class -->
+                        <useSystemClassLoader>false</useSystemClassLoader>
+                        <systemPropertyVariables>
+                            <!-- PACT provider contract verification configuration by system properties -->
+                            <pactbroker.host>pactbroker.bit.admin.ch</pactbroker.host>
+                            <pactbroker.scheme>https</pactbroker.scheme>
+                            <pactbroker.enablePending>true</pactbroker.enablePending>
+                            <pactbroker.consumerversionselectors.rawjson>${jeap.pact.provider.consumerversionselectors.raw}</pactbroker.consumerversionselectors.rawjson>
+                            <pactbroker.providerBranch>${git.branch}</pactbroker.providerBranch>
+                            <pact.provider.version>${project.version}-${git.commit.id.abbrev}</pact.provider.version>
+                            <pact.provider.branch>${git.branch}</pact.provider.branch>
+                            <pact.verifier.publishResults>false</pact.verifier.publishResults>
+                            <pact_do_not_track>true</pact_do_not_track>
+                            <pact.mockserver.addCloseHeader>true</pact.mockserver.addCloseHeader>
+                        </systemPropertyVariables>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <!-- This configuration is needed as the normal JUnit-Handler does not find the
+                         classes in the spring fat jar-->
+                    <configuration>
+                        <classpathDependencyExcludes>
+                            <classpathDependencyExcludes>${project.groupId}:${project.artifactId}
+                            </classpathDependencyExcludes>
+                        </classpathDependencyExcludes>
+                        <additionalClasspathElements>
+                            <additionalClasspathElement>${project.build.outputDirectory}</additionalClasspathElement>
+                        </additionalClasspathElements>
+                        <skipITs>${skip.failsafe.tests}</skipITs>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>agent</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                                <goal>prepare-agent-integration</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- PACT consumer contract publication configuration-->
+                <plugin>
+                    <groupId>au.com.dius.pact.provider</groupId>
+                    <artifactId>maven</artifactId>
+                    <version>${pact-jvm.version}</version>
+                    <configuration>
+                        <pactDirectory>${project.build.directory}/pacts</pactDirectory>
+                        <pactBrokerUrl>https://pactbroker.bit.admin.ch/</pactBrokerUrl>
+                        <projectVersion>${project.version}-${git.commit.id.abbrev}</projectVersion>
+                        <branchName>${git.branch}</branchName>
+                        <skipPactPublish>true</skipPactPublish>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${exec-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${maven-enforcer-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.honton.chas</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>${org.honton.chas-license-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>default-cli</id>
+                            <goals>
+                                <goal>compliance</goal>
+                            </goals>
+                            <phase>validate</phase>
+                            <configuration>
+                                <acceptableLicenses>
+                                    <!-- Accept permissive (weak copyleft) licenses for dependencies -->
+                                    <!-- From https://github.com/chonton/license-maven-plugin/blob/main/src/main/resources/osi-permissive.xml -->
+                                    <license>
+                                        <name>
+                                            ((The\s+)?Apache\s+(Software\s+)?License\s*(,\s*Version\s+)?2\.0)|(Apache-2\.0)
+                                        </name>
+                                        <url>
+                                            (https?://www\.apache\.org/licenses/LICENSE-2\.0(\.txt|\.html)?)|(https?://opensource\.org/licenses/Apache-2\.0)
+                                        </url>
+                                    </license>
+                                    <license>
+                                        <name>
+                                            ((The\s+)?3-Clause\s+BSD\s+License)|(New\s+BSD\s+License)|(Modified\s+BSD\s+License)|(BSD-3-Clause)
+                                        </name>
+                                        <url>https?://opensource\.org/licenses/BSD-3-Clause</url>
+                                    </license>
+                                    <license>
+                                        <name>
+                                            ((The\s+)?2-Clause\s+BSD\s+License)|(Simplified\s+BSD\s+License)|(FreeBSD\s+License)|(BSD-2-Clause)
+                                        </name>
+                                        <url>https?://opensource\.org/licenses/BSD-2-Clause</url>
+                                    </license>
+                                    <license>
+                                        <name>(GNU\s+Library\s+General\s+Public\s+License\s*,\s*version\s+2)|(LGPL-2\.0)
+                                        </name>
+                                        <url>https?://www\.gnu\.org/old-licenses/lgpl-2\.0(\.[a-z]{2})?\.html</url>
+                                    </license>
+                                    <license>
+                                        <name>
+                                            (GNU\s+Lesser\s+General\s+Public\s+License\s*,\s*version\s+2\.1)|(LGPL-2\.1)
+                                        </name>
+                                        <url>https?://www\.gnu\.org/old-licenses/lgpl-2\.1(\.[a-z]{2})?\.html</url>
+                                    </license>
+                                    <license>
+                                        <name>
+                                            (GNU\s+Lesser\s+(General\s+)?Public\s+License\s*(,\s*version\s+3)?)|(LGPL-3\.0)
+                                        </name>
+                                        <url>https?://www\.gnu\.org/licenses/lgpl-3\.0(\.[a-z]{2})?\.html</url>
+                                    </license>
+                                    <license>
+                                        <name>((The\s+)?MIT\s+License)|(MIT)</name>
+                                        <url>https?://opensource\.org/licenses/MIT</url>
+                                    </license>
+                                    <license>
+                                        <name>(Mozilla\s+Public\s+License\s+2\.0)|(MPL(-|\s)2\.0)</name>
+                                        <url>https?://www\.mozilla\.org/([a-z]+-[A-Z]+/)?MPL/?</url>
+                                    </license>
+                                    <license>
+                                        <name>(Common\s+Development\s+and\s+Distribution\s+License\s+1\.0)|(CDDL-1\.0)
+                                        </name>
+                                        <url>https?://opensource\.org/licenses/CDDL-1\.0</url>
+                                    </license>
+                                    <license>
+                                        <name>(Eclipse\s+Public\s+License\s+v?1\.0)|(EPL-1\.0)</name>
+                                        <url>https?://www\.eclipse\.org/legal/epl-v10\.html</url>
+                                    </license>
+                                    <license>
+                                        <name>(Eclipse\s+Public\s+License\s+v?2\.0)|(EPL-2\.0)</name>
+                                        <url>https?://www\.eclipse\.org/legal/epl-v20\.html</url>
+                                    </license>
+                                    <!-- Added for jEAP -->
+                                    <!-- EDL: Same as BSD 3-Clause -->
+                                    <license>
+                                        <name>Eclipse Distribution License \(New BSD License\)</name>
+                                    </license>
+                                    <!-- GPL2 with Classpath Exception (i.e. copyleft does not extend if used as library) -->
+                                    <license>
+                                        <name>GPL2 w/ CPE</name>
+                                        <url>https://www.gnu.org/software/classpath/license.html</url>
+                                    </license>
+                                    <!-- Bouncy Castle: Same as MIT license -->
+                                    <license>
+                                        <name>Bouncy Castle Licence</name>
+                                        <url>https://www.bouncycastle.org/licence.html</url>
+                                    </license>
+                                </acceptableLicenses>
+                                <artifact>true</artifact>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>${org.codehaus.mojo-license-maven-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>ch.admin.bit.jeap</groupId>
+                            <artifactId>jeap-license-template</artifactId>
+                            <version>${jeap-license-template.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <id>default-cli</id>
+                            <goals>
+                                <goal>aggregate-add-third-party</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.basedir}</outputDirectory>
+                                <thirdPartyFilename>THIRD-PARTY-LICENSES.md</thirdPartyFilename>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>add-third-party</id>
+                            <goals>
+                                <goal>add-third-party</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <fileTemplate>/ch/admin/bit/jeap/third-party.md.ftl</fileTemplate>
+                        <useMissingFile>true</useMissingFile>
+                        <useRepositoryMissingFiles>false</useRepositoryMissingFiles>
+                        <failOnMissing>true</failOnMissing>
+                        <acceptPomPackaging>true</acceptPomPackaging>
+                        <deployMissingFile>false</deployMissingFile>
+                        <licenseMerges>
+                            <!-- Avoid line breaks in the licenseMerge tags! -->
+                            <licenseMerge>Apache License, Version 2.0|The Apache Software License, Version 2.0|Apache Public License 2.0|Apache 2|Apache-2.0|Apache 2.0|Apache 2.0 License|Apache License 2.0|Apache Software License, version 2.0||The Apache License, Version 2.0|Apache License, version 2.0</licenseMerge>
+                            <licenseMerge>MIT License|MIT license|The MIT License|MIT|The MIT License (MIT)|MIT-0</licenseMerge>
+                            <licenseMerge>Mozilla Public License, Version 2.0|MPL 2.0</licenseMerge>
+                            <licenseMerge>GNU General Public License, version 2 (GPL2), with the classpath exception|GPL2 w/ CPE</licenseMerge>
+                            <licenseMerge>Eclipse Public License, Version 1.0|Eclipse Public License 1.0|Eclipse Public License - v 1.0|EPL 1.0</licenseMerge>
+                            <licenseMerge>Eclipse Public License v2.0|Eclipse Public License v. 2.0|Eclipse Public License - v 2.0|EPL 2.0</licenseMerge>
+                            <licenseMerge>Eclipse Distribution License - v 1.0|Eclipse Distribution License v. 1.0|Eclipse Distribution License (New BSD License)|EDL 1.0</licenseMerge>
+                            <licenseMerge>Common Development and Distribution License (CDDL) v1.0|COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0</licenseMerge>
+                            <licenseMerge>BSD 2-Clause License|BSD-2-Clause</licenseMerge>
+                            <licenseMerge>BSD License 3|BSD-3-Clause</licenseMerge>
+                            <licenseMerge>Public Domain|Public Domain, per Creative Commons CC0</licenseMerge>
+                        </licenseMerges>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <configuration>
+                            <deployAtEnd>true</deployAtEnd>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>${git-commit-id-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>generate-git-properties</id>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                        <phase>initialize</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                    <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties
+                    </generateGitPropertiesFilename>
+                    <offline>true</offline>
+                    <useNativeGit>true</useNativeGit>
+                    <abbrevLength>12</abbrevLength>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>${lombok.maven.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>${lombok.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+                    <outputDirectory>${project.basedir}/target/delombok</outputDirectory>
+                    <addOutputDirectory>false</addOutputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>delombok</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+                <configuration>
+                    <sourcepath>${project.basedir}/target/delombok;${project.basedir}/target/generated-sources</sourcepath>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Maven Enforcer Plugin -->
+            <!-- Enforces a Warning when one of the excluded Dependencies are used -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-banned-dependencies</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>org.springframework.boot:spring-boot-starter-webflux</exclude>
+                                        <exclude>org.springframework:spring-webflux</exclude>
+                                        <exclude>io.projectreactor.kafka:reactor-kafka</exclude>
+                                        <exclude>ch.admin.bit.jeap:jeap-spring-boot-swagger-webflux-starter</exclude>
+                                        <exclude>org.springdoc:springdoc-openapi-starter-webflux-ui</exclude>
+                                    </excludes>
+                                    <message>REACTIVE IS DEPRECATED for jEAP Applications</message>
+                                </bannedDependencies>
+                            </rules>
+                            <fail>warn</fail>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                            <addBuildEnvironmentEntries>true</addBuildEnvironmentEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>${releaseRepositoryId}</id>
+            <name>${releaseRepositoryName}</name>
+            <url>${releaseRepositoryUrl}</url>
+        </repository>
+        <snapshotRepository>
+            <id>${snapshotRepositoryId}</id>
+            <name>${snapshotRepositoryName}</name>
+            <!--suppress UnresolvedMavenProperty -->
+            <url>${snapshotRepositoryUrl}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>maven-public</id>
+            <name>Maven Public Group</name>
+            <url>https://repo.bit.admin.ch/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven-public</id>
+            <name>Maven Public Group</name>
+            <url>https://repo.bit.admin.ch/repository/maven-public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

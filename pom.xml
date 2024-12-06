@@ -27,7 +27,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- Also update the property spring-boot.version! -->
-        <version>3.4.0</version>
+        <version>3.3.5</version>
     </parent>
 
     <groupId>ch.admin.bit.jeap</groupId>

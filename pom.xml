@@ -7,10 +7,14 @@
     <url>https://github.com/jeap-admin-ch/jeap-internal-spring-boot-parent</url>
     <scm>
         <url>https://github.com/jeap-admin-ch/jeap-internal-spring-boot-parent</url>
+        <connection>scm:git:git://github.com/jeap-admin-ch/jeap-internal-spring-boot-parent.git</connection>
+        <developerConnection>scm:git:ssh://github.com:jeap-admin-ch/jeap-internal-spring-boot-parent.git
+        </developerConnection>
     </scm>
     <developers>
         <developer>
             <name>BIT</name>
+            <email>jeap-community@bit.admin.ch</email>
             <organization>Federal Office of Information Technology, Systems and Telecommunication FOITT</organization>
             <organizationUrl>https://www.bit.admin.ch/</organizationUrl>
         </developer>

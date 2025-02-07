@@ -7,15 +7,18 @@
     <url>https://github.com/jeap-admin-ch/jeap-internal-spring-boot-parent</url>
     <scm>
         <url>https://github.com/jeap-admin-ch/jeap-internal-spring-boot-parent</url>
+        <connection>scm:git:git://github.com/jeap-admin-ch/jeap-internal-spring-boot-parent.git</connection>
+        <developerConnection>scm:git:ssh://github.com:jeap-admin-ch/jeap-internal-spring-boot-parent.git</developerConnection>
     </scm>
     <developers>
         <developer>
             <name>BIT</name>
+            <email>jeap-community@bit.admin.ch</email>
             <organization>Federal Office of Information Technology, Systems and Telecommunication FOITT</organization>
             <organizationUrl>https://www.bit.admin.ch/</organizationUrl>
         </developer>
     </developers>
-    
+
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -27,12 +30,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- Also update the property spring-boot.version! -->
-        <version>3.4.1</version>
+        <version>3.4.2</version>
     </parent>
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.4.1-SNAPSHOT</version>
+    <version>5.5.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -44,7 +47,7 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Also update the spring-boot-dependencies parent version! -->
-        <spring-boot.version>3.4.1</spring-boot.version>
+        <spring-boot.version>3.4.2</spring-boot.version>
         <spring-cloud.version>2024.0.0</spring-cloud.version>
         <spring-security-oauth2-authorization-server.version>1.4.0</spring-security-oauth2-authorization-server.version>
         <lombok.version>1.18.36</lombok.version>
@@ -73,6 +76,8 @@
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <jeap.pact.provider.consumerversionselectors.raw>[{"mainBranch":true}, {"matchingBranch": true}, {"deployedOrReleased": true}]</jeap.pact.provider.consumerversionselectors.raw>
         <version-bump-postfix>-SNAPSHOT</version-bump-postfix>
+        <maven-central-autopublish>true</maven-central-autopublish>
+        <maven-central-wait-until>published</maven-central-wait-until>
     </properties>
 
     <profiles>
@@ -118,7 +123,7 @@
             </build>
         </profile>
         <!-- Profile for enabling the publishing of contracts and verification results in consumer driven contract tests
-             durint local builds -->
+             during local builds -->
         <profile>
             <id>cdct-enable-publishing-local</id>
             <build>
@@ -302,6 +307,63 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>license-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>maven-central-publish</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <!-- The jeap-central-publishing-maven-plugin will handle deployment to maven central, skip the deploy plugin -->
+                <maven.deploy.skip>true</maven.deploy.skip>
+                <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <configuration>
+                            <gpgArguments>
+                                <!-- Note: These arguments are required for gpg 2.1+ -->
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>ch.admin.bit.jeap</groupId>
+                        <artifactId>jeap-central-publishing-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <executions>
+                            <execution>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>publish</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <publishingServerId>maven-central</publishingServerId>
+                            <autoPublish>${maven-central-autopublish}</autoPublish>
+                            <skipPublishing>false</skipPublishing>
+                            <waitPollingInterval>15</waitPollingInterval>
+                            <ignorePublishedComponents>true</ignorePublishedComponents>
+                            <deploymentName>${project.name}</deploymentName>
+                            <waitUntil>${maven-central-wait-until}</waitUntil>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
@@ -649,7 +711,7 @@
                         <deployMissingFile>false</deployMissingFile>
                         <licenseMerges>
                             <!-- Avoid line breaks in the licenseMerge tags! -->
-                            <licenseMerge>Apache License, Version 2.0|The Apache Software License, Version 2.0|Apache Public License 2.0|Apache 2|Apache-2.0|Apache 2.0|Apache 2.0 License|Apache License 2.0|Apache Software License, version 2.0||The Apache License, Version 2.0|Apache License, version 2.0</licenseMerge>
+                            <licenseMerge>Apache License Version 2.0|Apache License, Version 2.0|The Apache Software License, Version 2.0|Apache Public License 2.0|Apache 2|Apache-2.0|Apache 2.0|Apache 2.0 License|Apache License 2.0|Apache Software License, version 2.0|The Apache License, Version 2.0|Apache License, version 2.0</licenseMerge>
                             <licenseMerge>MIT License|MIT license|The MIT License|MIT|The MIT License (MIT)|MIT-0</licenseMerge>
                             <licenseMerge>Mozilla Public License, Version 2.0|MPL 2.0</licenseMerge>
                             <licenseMerge>GNU General Public License, version 2 (GPL2), with the classpath exception|GPL2 w/ CPE</licenseMerge>
@@ -662,6 +724,16 @@
                             <licenseMerge>Public Domain|Public Domain, per Creative Commons CC0</licenseMerge>
                         </licenseMerges>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>ch.admin.bit.jeap</groupId>
+                    <artifactId>jeap-central-publishing-maven-plugin</artifactId>
+                    <version>0.7.0.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.5</version>
                 </plugin>
             </plugins>
         </pluginManagement>

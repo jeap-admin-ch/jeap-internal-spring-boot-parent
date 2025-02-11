@@ -9,7 +9,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Include artifact version in maven central deployment name
 - Generate git.commit.id property
+- Manage dependency AmazonCorrettoCryptoProvider
 
 ## [5.5.1] - 2024-02-10
 

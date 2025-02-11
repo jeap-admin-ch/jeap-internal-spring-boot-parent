@@ -70,6 +70,7 @@
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
         <org.codehaus.mojo-license-maven-plugin.version>2.4.0</org.codehaus.mojo-license-maven-plugin.version>
         <jeap-license-template.version>1.0.2</jeap-license-template.version>
+        <AmazonCorrettoCryptoProvider.version>2.4.1</AmazonCorrettoCryptoProvider.version>
         <!-- Test config -->
         <skip.surefire.tests>false</skip.surefire.tests>
         <skip.failsafe.tests>false</skip.failsafe.tests>
@@ -484,6 +485,32 @@
                 <version>${aws.sdk.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- Amazon Corretto Crypto Provider -->
+            <dependency>
+                <groupId>software.amazon.cryptools</groupId>
+                <artifactId>AmazonCorrettoCryptoProvider</artifactId>
+                <version>${AmazonCorrettoCryptoProvider.version}</version>
+                <classifier>linux-x86_64</classifier>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.cryptools</groupId>
+                <artifactId>AmazonCorrettoCryptoProvider</artifactId>
+                <version>${AmazonCorrettoCryptoProvider.version}</version>
+                <classifier>linux-aarch_64</classifier>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.cryptools</groupId>
+                <artifactId>AmazonCorrettoCryptoProvider</artifactId>
+                <version>${AmazonCorrettoCryptoProvider.version}</version>
+                <classifier>osx-x86_64</classifier>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.cryptools</groupId>
+                <artifactId>AmazonCorrettoCryptoProvider</artifactId>
+                <version>${AmazonCorrettoCryptoProvider.version}</version>
+                <classifier>osx-aarch_64</classifier>
             </dependency>
 
         </dependencies>

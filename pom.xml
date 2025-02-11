@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.5.1-SNAPSHOT</version>
+    <version>5.5.2-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -70,6 +70,7 @@
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
         <org.codehaus.mojo-license-maven-plugin.version>2.4.0</org.codehaus.mojo-license-maven-plugin.version>
         <jeap-license-template.version>1.0.2</jeap-license-template.version>
+        <AmazonCorrettoCryptoProvider.version>2.4.1</AmazonCorrettoCryptoProvider.version>
         <!-- Test config -->
         <skip.surefire.tests>false</skip.surefire.tests>
         <skip.failsafe.tests>false</skip.failsafe.tests>
@@ -360,7 +361,7 @@
                             <skipPublishing>false</skipPublishing>
                             <waitPollingInterval>15</waitPollingInterval>
                             <ignorePublishedComponents>true</ignorePublishedComponents>
-                            <deploymentName>${project.name}</deploymentName>
+                            <deploymentName>${project.artifactId}-${project.version}</deploymentName>
                             <waitUntil>${maven-central-wait-until}</waitUntil>
                         </configuration>
                     </plugin>
@@ -484,6 +485,32 @@
                 <version>${aws.sdk.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- Amazon Corretto Crypto Provider -->
+            <dependency>
+                <groupId>software.amazon.cryptools</groupId>
+                <artifactId>AmazonCorrettoCryptoProvider</artifactId>
+                <version>${AmazonCorrettoCryptoProvider.version}</version>
+                <classifier>linux-x86_64</classifier>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.cryptools</groupId>
+                <artifactId>AmazonCorrettoCryptoProvider</artifactId>
+                <version>${AmazonCorrettoCryptoProvider.version}</version>
+                <classifier>linux-aarch_64</classifier>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.cryptools</groupId>
+                <artifactId>AmazonCorrettoCryptoProvider</artifactId>
+                <version>${AmazonCorrettoCryptoProvider.version}</version>
+                <classifier>osx-x86_64</classifier>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.cryptools</groupId>
+                <artifactId>AmazonCorrettoCryptoProvider</artifactId>
+                <version>${AmazonCorrettoCryptoProvider.version}</version>
+                <classifier>osx-aarch_64</classifier>
             </dependency>
 
         </dependencies>
@@ -815,7 +842,7 @@
                         <includeOnlyProperty>^git.build.(time|version)$</includeOnlyProperty>
                         <includeOnlyProperty>^git.branch$</includeOnlyProperty>
                         <includeOnlyProperty>^git.dirty</includeOnlyProperty>
-                        <includeOnlyProperty>^git.commit.id.(abbrev|full)$</includeOnlyProperty>
+                        <includeOnlyProperty>^git.commit.id.*$</includeOnlyProperty>
                         <includeOnlyProperty>^git.commit.time$</includeOnlyProperty>
                     </includeOnlyProperties>
                 </configuration>

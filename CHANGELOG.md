@@ -5,7 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [5.5.2] - 2024-02-11
+## [5.5.3] - 2025-02-12
+
+### Changed
+
+- Extended the regular expression for matching the 'Eclipse Public License v2.0' to also match
+  if the license version is written as "v. 2.0".
+
+## [5.5.2] - 2025-02-11
 
 ### Changed
 
@@ -13,13 +20,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Generate git.commit.id property
 - Manage dependency AmazonCorrettoCryptoProvider
 
-## [5.5.1] - 2024-02-10
+## [5.5.1] - 2025-02-10
 
 ### Changed
 
 - Validate maven central publish first, then deploy to repository
 
-## [5.5.0] - 2024-02-07
+## [5.5.0] - 2025-02-07
 
 ### Changed
 

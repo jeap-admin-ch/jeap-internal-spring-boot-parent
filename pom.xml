@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.5.2-SNAPSHOT</version>
+    <version>5.5.3-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -697,7 +697,7 @@
                                         <url>https?://www\.eclipse\.org/legal/epl-v10\.html</url>
                                     </license>
                                     <license>
-                                        <name>(Eclipse\s+Public\s+License\s+v?2\.0)|(EPL-2\.0)</name>
+                                        <name>(Eclipse\s+Public\s+License\s+(v|v\.)?\s*2\.0)|(EPL-2\.0)</name>
                                         <url>https?://www\.eclipse\.org/legal/epl-v20\.html</url>
                                     </license>
                                     <!-- Added for jEAP -->

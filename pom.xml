@@ -79,6 +79,8 @@
         <version-bump-postfix>-SNAPSHOT</version-bump-postfix>
         <maven-central-autopublish>true</maven-central-autopublish>
         <maven-central-wait-until>validated</maven-central-wait-until>
+        <jeap-central-publishing-maven-plugin.version>0.7.0.1</jeap-central-publishing-maven-plugin.version>
+        <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
     </properties>
 
     <profiles>
@@ -328,6 +330,7 @@
                                 <arg>--pinentry-mode</arg>
                                 <arg>loopback</arg>
                             </gpgArguments>
+                            <bestPractices>true</bestPractices>
                         </configuration>
                         <executions>
                             <execution>
@@ -773,12 +776,12 @@
                 <plugin>
                     <groupId>ch.admin.bit.jeap</groupId>
                     <artifactId>jeap-central-publishing-maven-plugin</artifactId>
-                    <version>0.7.0.1</version>
+                    <version>${jeap-central-publishing-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.5</version>
+                    <version>${maven-gpg-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

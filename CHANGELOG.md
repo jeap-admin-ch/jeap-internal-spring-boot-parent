@@ -10,6 +10,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 - Consume GPG passphrase from env var MAVEN_GPG_PASSPHRASE as recommended by the maven-gpg-plugin
+- Update maven-gpg-plugin to latest version 3.2.7
 
 ## [5.5.3] - 2025-02-12
 

@@ -30,12 +30,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- Also update the property spring-boot.version! -->
-        <version>3.4.2</version>
+        <version>3.4.3</version>
     </parent>
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.5.4-SNAPSHOT</version>
+    <version>5.5.5-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -47,7 +47,7 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Also update the spring-boot-dependencies parent version! -->
-        <spring-boot.version>3.4.2</spring-boot.version>
+        <spring-boot.version>3.4.3</spring-boot.version>
         <spring-cloud.version>2024.0.0</spring-cloud.version>
         <spring-security-oauth2-authorization-server.version>1.4.0</spring-security-oauth2-authorization-server.version>
         <lombok.version>1.18.36</lombok.version>

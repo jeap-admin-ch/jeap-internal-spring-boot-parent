@@ -710,6 +710,10 @@
                                         <name>GPL2 w/ CPE</name>
                                         <url>https://www.gnu.org/software/classpath/license.html</url>
                                     </license>
+                                    <license>
+                                        <name>GNU General Public License (GPL), version 2, with the Classpath exception</name>
+                                        <url>http://openjdk.java.net/legal/gplv2+ce.html</url>
+                                    </license>
                                     <!-- Bouncy Castle: Same as MIT license -->
                                     <license>
                                         <name>Bouncy Castle Licence</name>
@@ -762,7 +766,7 @@
                             <licenseMerge>Apache License Version 2.0|Apache License, Version 2.0|The Apache Software License, Version 2.0|Apache Public License 2.0|Apache 2|Apache-2.0|Apache 2.0|Apache 2.0 License|Apache License 2.0|Apache Software License, version 2.0|The Apache License, Version 2.0|Apache License, version 2.0</licenseMerge>
                             <licenseMerge>MIT License|MIT license|The MIT License|MIT|The MIT License (MIT)|MIT-0</licenseMerge>
                             <licenseMerge>Mozilla Public License, Version 2.0|MPL 2.0</licenseMerge>
-                            <licenseMerge>GNU General Public License, version 2 (GPL2), with the classpath exception|GPL2 w/ CPE</licenseMerge>
+                            <licenseMerge>GNU General Public License, version 2 (GPL2), with the classpath exception|GPL2 w/ CPE|GNU General Public License (GPL), version 2, with the Classpath exception</licenseMerge>
                             <licenseMerge>Eclipse Public License, Version 1.0|Eclipse Public License 1.0|Eclipse Public License - v 1.0|EPL 1.0</licenseMerge>
                             <licenseMerge>Eclipse Public License v2.0|Eclipse Public License v. 2.0|Eclipse Public License - v 2.0|EPL 2.0</licenseMerge>
                             <licenseMerge>Eclipse Distribution License - v 1.0|Eclipse Distribution License v. 1.0|Eclipse Distribution License (New BSD License)|EDL 1.0</licenseMerge>

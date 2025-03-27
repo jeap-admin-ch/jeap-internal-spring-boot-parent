@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.7.0] - 2025-03-27
+
+### Changed
+
+- Updated Spring Boot from 3.4.3 to 3.4.4
+- Updated Spring Cloud from 2024.0.0 to 2024.0.1
+- Updated spring-security-oauth2-authorization-server from 1.4.0 to 1.4.2
+- Updated maven-compiler-plugin from 3.13.0 to 3.14.0
+- Updated maven-javadoc-plugin from 3.11.0 to 3.11.1
+- Updated shedlock from 6.0.2 to 6.3.0
+- Updated pact-jvm from 4.6.15 to 4.6.17
+- Updated aws sdk from 2.30.32 to 2.31.8
+- Updated bcpkix-jdk18on from 1.79 to 1.80
+- Updated bcprov-jdk18on from 1.79 to 1.80
+- Updated org.codehaus.mojo-license-maven-plugin from 2.4.0 to 2.5.0
+- Updated jeap-license-template from 1.0.2 to 1.0.3
+- Updated AmazonCorrettoCryptoProvider from 2.4.1 to 2.5.0
+- Updated commit-id plugin to io.github.git-commit-id:git-commit-id-maven-plugin 9.0.1
+- Removed Lombok version (included with Spring Boot)
+
 ## [5.6.1] - 2025-03-06
 
 ### Fixed

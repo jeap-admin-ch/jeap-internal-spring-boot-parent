@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.8.0] - 2025-04-30
+
+### Changed
+
+- Updated Spring Boot from 3.4.4 to 3.4.5
+- Updated spring-security-oauth2-authorization-server from 1.4.2 to 1.4.3
+- Updated shedlock from 6.3.0 to 6.4.0
+- Updated commons-collections4 from 4.4 to 4.5.0
+- Updated jacoco-maven-plugin from 0.8.12 to 0.8.13
+- Updated aws.sdk from 2.31.8 to 2.31.31
+
 ## [5.7.1] - 2025-04-02
 
 ### Changed

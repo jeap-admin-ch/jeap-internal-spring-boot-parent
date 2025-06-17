@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.10.1] - 2025-06-17
+
+### Added
+
+- Added org.apache.tomcat.embed:tomcat-embed-core as managed dependency with version 10.1.42 (replace 10.1.41) to fix CVE-2025-48988
+
 ## [5.10.0] - 2025-06-13
 
 ### Added

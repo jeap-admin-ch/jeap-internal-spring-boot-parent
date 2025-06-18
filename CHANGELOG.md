@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.10.2] - 2025-06-18
+
+### Added
+
+- Added com.google.protobuf:protobuf-java as managed dependency with version 3.25.5 (replace 3.25.3) to fix CVE-2024-7254
+
 ## [5.10.1] - 2025-06-17
 
 ### Added

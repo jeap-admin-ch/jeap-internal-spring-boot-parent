@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.11.0] - 2025-07-04
+
+### Changed
+
+- Updated Spring Boot from 3.4.6 to 3.5.3
+- Updated Spring Cloud from 2024.0.1 to 2025.0.0
+- Updated spring-security-oauth2-authorization-server from 1.4.3 to 1.5.1
+- Updated maven-enforcer-plugin from 3.5.0 to 3.6.0
+- Updated build-helper-maven-plugin from 3.6.0 to 3.6.1
+- Updated shedlock from 6.8.0 to 6.9.0
+- Updated aws.sdk from 2.31.54 to 2.31.76
+- Updated bcpkix-jdk18on from 1.80 to 1.81
+- Updated bcprov-jdk18on from 1.80 to 1.81
+- Updated org.codehaus.mojo-license-maven-plugin from 2.5.0 to 2.6.0
+- Updated maven-gpg-plugin from 3.2.7 to 3.2.8
+- Updated com.google.protobuf:protobuf-java (managed dependency) from 3.25.5 to 3.25.8
+- Removed postgresql as managed dependency
+- Removed tomcat-embed-core as managed dependency
+
 ## [5.10.2] - 2025-06-18
 
 ### Added

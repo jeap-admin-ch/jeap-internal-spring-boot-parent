@@ -30,12 +30,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- Also update the property spring-boot.version! -->
-        <version>3.4.6</version>
+        <version>3.5.3</version>
     </parent>
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.10.2-SNAPSHOT</version>
+    <version>5.11.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -47,42 +47,42 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Also update the spring-boot-dependencies parent version! -->
-        <spring-boot.version>3.4.6</spring-boot.version>
-        <spring-cloud.version>2024.0.1</spring-cloud.version>
-        <spring-security-oauth2-authorization-server.version>1.4.3</spring-security-oauth2-authorization-server.version>
+        <spring-boot.version>3.5.3</spring-boot.version>
+        <spring-cloud.version>2025.0.0</spring-cloud.version>
+        <spring-security-oauth2-authorization-server.version>1.5.1</spring-security-oauth2-authorization-server.version>
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
-        <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
-        <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
+        <maven-enforcer-plugin.version>3.6.0</maven-enforcer-plugin.version>
+        <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
         <git-commit-id-maven-plugin.version>9.0.2</git-commit-id-maven-plugin.version>
-        <shedlock.version>6.8.0</shedlock.version>
+        <shedlock.version>6.9.0</shedlock.version>
         <commons-collections4.version>4.5.0</commons-collections4.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <exec-maven-plugin.version>3.5.1</exec-maven-plugin.version>
         <pact-jvm.version>4.6.17</pact-jvm.version>
         <togglz.version>4.4.0</togglz.version>
-        <aws.sdk.version>2.31.54</aws.sdk.version>
-        <bcpkix-jdk18on.version>1.80</bcpkix-jdk18on.version>
-        <bcprov-jdk18on.version>1.80</bcprov-jdk18on.version>
+        <aws.sdk.version>2.31.76</aws.sdk.version>
+        <bcpkix-jdk18on.version>1.81</bcpkix-jdk18on.version>
+        <bcprov-jdk18on.version>1.81</bcprov-jdk18on.version>
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
-        <org.codehaus.mojo-license-maven-plugin.version>2.5.0</org.codehaus.mojo-license-maven-plugin.version>
+        <org.codehaus.mojo-license-maven-plugin.version>2.6.0</org.codehaus.mojo-license-maven-plugin.version>
         <jeap-license-template.version>1.0.3</jeap-license-template.version>
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
-        <!-- Test config -->
-        <skip.surefire.tests>false</skip.surefire.tests>
-        <skip.failsafe.tests>false</skip.failsafe.tests>
+        <jeap-central-publishing-maven-plugin.version>0.7.0.1</jeap-central-publishing-maven-plugin.version>
+        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
+        <!-- managed dependencies caused by vulnerabilities -->
+        <protobuf-java.version>3.25.8</protobuf-java.version>
+        <!-- Config -->
         <maven.javadoc.skip>true</maven.javadoc.skip>
-        <jeap.pact.provider.consumerversionselectors.raw>[{"mainBranch":true}, {"matchingBranch": true}, {"deployedOrReleased": true}]</jeap.pact.provider.consumerversionselectors.raw>
         <version-bump-postfix>-SNAPSHOT</version-bump-postfix>
         <maven-central-autopublish>true</maven-central-autopublish>
         <maven-central-wait-until>validated</maven-central-wait-until>
-        <jeap-central-publishing-maven-plugin.version>0.7.0.1</jeap-central-publishing-maven-plugin.version>
-        <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
-        <postgresql.version>42.7.7</postgresql.version>
-        <tomcat-embed-core.version>10.1.42</tomcat-embed-core.version>
-        <protobuf-java.version>3.25.5</protobuf-java.version>
+        <!-- Test config -->
+        <skip.surefire.tests>false</skip.surefire.tests>
+        <skip.failsafe.tests>false</skip.failsafe.tests>
+        <jeap.pact.provider.consumerversionselectors.raw>[{"mainBranch":true}, {"matchingBranch": true}, {"deployedOrReleased": true}]</jeap.pact.provider.consumerversionselectors.raw>
     </properties>
 
     <profiles>
@@ -514,28 +514,12 @@
                 <version>${AmazonCorrettoCryptoProvider.version}</version>
                 <classifier>osx-aarch_64</classifier>
             </dependency>
-
-            <!-- TODO Managed PostgreSQL will be removed with JEAP-5789 -->
-            <dependency>
-                <groupId>org.postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>${postgresql.version}</version>
-            </dependency>
-
-            <!-- TODO Managed tomcat-embed-core will be removed with JEAP-5650 -->
-            <dependency>
-                <groupId>org.apache.tomcat.embed</groupId>
-                <artifactId>tomcat-embed-core</artifactId>
-                <version>${tomcat-embed-core.version}</version>
-            </dependency>
-
-            <!-- TODO Managed protobuf-java will be removed with JEAP-5650 -->
+            <!-- Managed protobuf-java dependency, tracked by jEAP team -->
             <dependency>
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
                 <version>${protobuf-java.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

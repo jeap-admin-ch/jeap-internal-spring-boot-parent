@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.12.0] - 2025-08-04
+
+### Changed
+
+- Updated Spring Boot from 3.5.3 to 3.5.4
+- Updated maven-enforcer-plugin from 3.6.0 to 3.6.1
+- Updated shedlock from 6.9.0 to 6.9.2
+- Updated exec-maven-plugin from 3.5.0 to 3.5.1
+- Updated aws.sdk from 2.31.76 to 2.32.14
+
 ## [5.11.0] - 2025-07-04
 
 ### Changed

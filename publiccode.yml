@@ -14,11 +14,13 @@ softwareType: library
 description:
   en:
     localisedName: jeap-internal-spring-boot-parent
-    shortDescription: TODO (Max. 150 characters)
+    shortDescription: Dependency management for Spring Boot libraries and applications, used by all jEAP projects.
     longDescription: >
-      TODO (Min. 150 characters)
+      This parent provides dependency management and plugin configuration management. It inherits from
+      org.springframework.boot:spring-boot-dependencies, and thus provides also manages the Spring Boot version.
+      Most of the managed dependencies are defined by the Spring Boot parent.
     features:
-      - TODO
+      - Maven dependency and plugin management for libraries and applications based on Spring Boot
 legal:
   license: Apache-2.0
 maintenance:

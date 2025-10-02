@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.15.0] - 2025-10-02
+
+### Changed
+
+- Updated maven-compiler-plugin from 3.14.0 to 3.14.1
+- Updated maven-javadoc-plugin from 3.11.2 to 3.12.0
+- Updated shedlock from 6.9.2 to 6.10.0
+- Updated exec-maven-plugin from 3.5.1 to 3.6.0
+- Updated aws.sdk from 2.32.14 to 2.34.6
+- Updated bcpkix-jdk18on fom 1.81 to 1.82
+- Updated bcprov-jdk18on fom 1.81 to 1.82
+- Updated org.codehaus.mojo-license-maven-plugin from 2.6.0 to 2.7.0
+
+
 ## [5.14.0] - 2025-09-18
 
 ### Changed

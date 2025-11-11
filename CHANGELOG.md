@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.15.1] - 2025-11-12
+
+- Added automatic publishing of consumer pacts to the pact maven plugin management. Developers no longer need to manually
+  configure the publish goal in their pact consumers. The execution is bound to the install phase to prevent
+  race conditions with pact file creation during the test phase.
+
 ## [5.15.0] - 2025-10-02
 
 ### Changed

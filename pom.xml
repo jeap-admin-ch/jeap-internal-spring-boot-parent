@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.15.0-SNAPSHOT</version>
+    <version>5.15.1-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -111,6 +111,15 @@
                             <configuration>
                                 <skipPactPublish>false</skipPactPublish>
                             </configuration>
+                            <executions>
+                                <execution>
+                                    <!-- publishing must happen after the consumer pact tests create the pact files -->
+                                    <phase>install</phase>
+                                    <goals>
+                                        <goal>publish</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
                         </plugin>
                         <!-- Enabling the publishing of provider contract verifications -->
                         <plugin>
@@ -141,6 +150,15 @@
                             <configuration>
                                 <skipPactPublish>false</skipPactPublish>
                             </configuration>
+                            <executions>
+                                <execution>
+                                    <!-- publishing must happen after the consumer pact tests create the pact files -->
+                                    <phase>install</phase>
+                                    <goals>
+                                        <goal>publish</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
                         </plugin>
                         <!-- Enabling the publishing of provider contract verifications -->
                         <plugin>

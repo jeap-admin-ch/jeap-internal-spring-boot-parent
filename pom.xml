@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.16.0-SNAPSHOT</version>
+    <version>5.16.1-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -47,6 +47,7 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Also update the spring-boot-dependencies parent version! -->
+        <!-- When updating, check if any 'Version overrides due to CVEs' below can be removed -->
         <spring-boot.version>3.5.8</spring-boot.version>
         <spring-cloud.version>2025.0.0</spring-cloud.version>
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
@@ -82,6 +83,8 @@
         <skip.surefire.tests>false</skip.surefire.tests>
         <skip.failsafe.tests>false</skip.failsafe.tests>
         <jeap.pact.provider.consumerversionselectors.raw>[{"mainBranch":true}, {"matchingBranch": true}, {"deployedOrReleased": true}]</jeap.pact.provider.consumerversionselectors.raw>
+        <!-- Version overrides due to CVEs -->
+        <lz4-java.version>1.8.1</lz4-java.version> <!-- CVE-2025-12183, transitive dependency of spring-kafka -> kafka-clients. Remove dependency below when no longer required. -->
     </properties>
 
     <profiles>
@@ -422,6 +425,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.lz4</groupId>
+                <artifactId>lz4-java</artifactId>
+                <version>${lz4-java.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>

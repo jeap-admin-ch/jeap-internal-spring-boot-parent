@@ -5,7 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [5.16.2] - 2025-12-08
+## [5.16.3] - 2025-12-08
+
+- Pin at.yawk.lz4 lz4-java version to 1.10.1 to address CVE-2025-66566
+- Revert previous fix 
+
+- ## [5.16.2] - 2025-12-08
 
 - Pin lz4-java version to 1.10.1 to address CVE-2025-66566
 

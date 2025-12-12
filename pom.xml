@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.16.3-SNAPSHOT</version>
+    <version>5.16.4-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -133,6 +133,12 @@
                                 <systemPropertyVariables>
                                     <pact.verifier.publishResults>true</pact.verifier.publishResults>
                                 </systemPropertyVariables>
+                                <argLine>
+                                    ${argLine}
+                                    -Djdk.attach.allowAttachSelf=true
+                                    -XX:+EnableDynamicAgentLoading
+                                    -Xshare:off
+                                </argLine>
                             </configuration>
                         </plugin>
                     </plugins>
@@ -172,6 +178,12 @@
                                 <systemPropertyVariables>
                                     <pact.verifier.publishResults>true</pact.verifier.publishResults>
                                 </systemPropertyVariables>
+                                <argLine>
+                                    ${argLine}
+                                    -Djdk.attach.allowAttachSelf=true
+                                    -XX:+EnableDynamicAgentLoading
+                                    -Xshare:off
+                                </argLine>
                             </configuration>
                         </plugin>
                         <!-- Making sure that the repository is not dirty, i.e. that the git commit hash appended to consumer
@@ -621,6 +633,12 @@
                             <additionalClasspathElement>${project.build.outputDirectory}</additionalClasspathElement>
                         </additionalClasspathElements>
                         <skipITs>${skip.failsafe.tests}</skipITs>
+                        <argLine>
+                            ${argLine}
+                            -Djdk.attach.allowAttachSelf=true
+                            -XX:+EnableDynamicAgentLoading
+                            -Xshare:off
+                        </argLine>
                     </configuration>
                 </plugin>
                 <plugin>

@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.16.6] - 2024-12-19
+
+### Changed
+
+- Upgraded spring boot from 3.5.8 to 3.5.9
+- Pin at.org.bitbucket.b_c jose4j version to 0.9.5 to address CVE-2024-29371
+
 ## [5.16.5] - 2025-12-16
 
 - add mockito as an agent also to default maven-surefire-plugin configuration to prevent logged warnings

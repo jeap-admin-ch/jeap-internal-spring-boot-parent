@@ -30,12 +30,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- Also update the property spring-boot.version! -->
-        <version>3.5.8</version>
+        <version>3.5.9</version>
     </parent>
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.16.5-SNAPSHOT</version>
+    <version>5.16.6-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -48,7 +48,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Also update the spring-boot-dependencies parent version! -->
         <!-- When updating, check if any 'Version overrides due to CVEs' below can be removed -->
-        <spring-boot.version>3.5.8</spring-boot.version>
+        <spring-boot.version>3.5.9</spring-boot.version>
         <spring-cloud.version>2025.0.0</spring-cloud.version>
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
@@ -86,6 +86,7 @@
         <!-- Version overrides due to CVEs -->
         <lz4-java.version>1.8.1</lz4-java.version> <!-- CVE-2025-12183, transitive dependency of spring-kafka -> kafka-clients. Remove dependency below when no longer required. -->
         <yawk-lz4-java.version>1.10.1</yawk-lz4-java.version> <!-- CVE-2025-66566 transitive dependency of spring-kafka -> kafka-clients. Remove dependency below when no longer required. -->
+        <jose4j.version>0.9.5</jose4j.version> <!-- CVE-2024-29371 transitive dependency of :spring-kafka-test 3.3.11. Remove dependency below when no longer required. -->
     </properties>
 
     <profiles>
@@ -447,6 +448,11 @@
                 <groupId>at.yawk.lz4</groupId>
                 <artifactId>lz4-java</artifactId>
                 <version>${yawk-lz4-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bitbucket.b_c</groupId>
+                <artifactId>jose4j</artifactId>
+                <version>${jose4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>

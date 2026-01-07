@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.16.7-SNAPSHOT</version>
+    <version>5.16.8-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -86,7 +86,7 @@
         <!-- Version overrides due to CVEs -->
         <lz4-java.version>1.8.1</lz4-java.version> <!-- CVE-2025-12183, transitive dependency of spring-kafka -> kafka-clients. Remove dependency below when no longer required. -->
         <yawk-lz4-java.version>1.10.1</yawk-lz4-java.version> <!-- CVE-2025-66566 transitive dependency of spring-kafka -> kafka-clients. Remove dependency below when no longer required. -->
-        <jose4j.version>0.9.5</jose4j.version> <!-- CVE-2024-29371 transitive dependency of :spring-kafka-test 3.3.11. Remove dependency below when no longer required. -->
+        <jose4j.version>0.9.6</jose4j.version> <!-- CVE-2024-29371 transitive dependency of :spring-kafka-test 3.3.11. Remove dependency below when no longer required. -->
     </properties>
 
     <profiles>

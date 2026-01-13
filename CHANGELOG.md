@@ -5,19 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [5.16.8] - 2024-01-07
+## [5.17.0] - 2024-01-14
+
+### Changed
+
+- Updated maven-source-plugin from 3.3.1 to 3.4.0
+- Updated maven-enforcer-plugin from 3.6.1 to 3.6.2
+- Updated shedlock from 6.10.0 to 7.5.0
+- Updated jacoco-maven-plugin from 0.8.13 to 0.8.14
+- Updated exec-maven-plugin from 3.6.0 to 3.6.3
+- Updated aws.sdk from 2.34.6 to 2.41.5
+- Updated bcpkix-jdk18on fom 1.82 to 1.83
+- Updated bcprov-jdk18on fom 1.82 to 1.83
+- Updated org.codehaus.mojo-license-maven-plugin from 2.7.0 to 2.7.1
+- Updated yawk-lz4-java from 1.10.1 to 1.10.2
+
+## [5.16.8] - 2026-01-07
 
 ### Changed
 
 - Pin at.org.bitbucket.b_c jose4j version to 0.9.6 to address CVE-2024-29371
 
-## [5.16.7] - 2024-12-22
+## [5.16.7] - 2025-12-22
 
 ### Changed
 
 - Update pact jvm version from 4.6.17 to 4.6.19 to address CVE-2025-66516
 
-## [5.16.6] - 2024-12-19
+## [5.16.6] - 2025-12-19
 
 ### Changed
 

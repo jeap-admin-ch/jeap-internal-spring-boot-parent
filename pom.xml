@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>5.19.2-SNAPSHOT</version>
+    <version>5.19.3-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -971,35 +971,6 @@
                         <goals>
                             <goal>jar-no-fork</goal>
                         </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- Maven Enforcer Plugin -->
-            <!-- Enforces a Warning when one of the excluded Dependencies are used -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>enforce-banned-dependencies</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <bannedDependencies>
-                                    <excludes>
-                                        <exclude>org.springframework.boot:spring-boot-starter-webflux</exclude>
-                                        <exclude>org.springframework:spring-webflux</exclude>
-                                        <exclude>io.projectreactor.kafka:reactor-kafka</exclude>
-                                        <exclude>ch.admin.bit.jeap:jeap-spring-boot-swagger-webflux-starter</exclude>
-                                        <exclude>org.springdoc:springdoc-openapi-starter-webflux-ui</exclude>
-                                    </excludes>
-                                    <message>REACTIVE IS DEPRECATED for jEAP Applications</message>
-                                </bannedDependencies>
-                            </rules>
-                            <fail>warn</fail>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>

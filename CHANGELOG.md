@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.20.0] - 2026-03-25
+
+### Changed
+
+- Updated maven-compiler-plugin from 3.14.1 to 3.15.0
+- Updated shedlock from 7.5.0 to 7.7.0
+- Updated pact-jvm from 4.6.19 to 4.6.20
+- Updated togglz from 4.4.0 to 4.6.1
+- Updated aws.sdk from 2.41.5 to 2.42.20
+
 ## [5.19.4] - 2026-03-23
 
 ### Changed

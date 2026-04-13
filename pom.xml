@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>6.0.1-SNAPSHOT</version>
+    <version>6.0.2-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -89,6 +89,7 @@
         <!-- Upgrade the Jackson version managed by Spring from 2.19.4 to 2.21.1 in order to fix a
              DOS vulnerability in jackson-core: see https://github.com/advisories/GHSA-72hv-8253-57qq -->
         <jackson-bom.version>2.21.1</jackson-bom.version>
+        <tomcat-embed-core.version>10.1.54</tomcat-embed-core.version>
     </properties>
 
     <profiles>
@@ -441,6 +442,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Managed tomcat-embed-core will be removed with JEAP-6467 -->
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${tomcat-embed-core.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.lz4</groupId>
                 <artifactId>lz4-java</artifactId>

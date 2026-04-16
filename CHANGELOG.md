@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.3] - 2026-04-16
+
+### Changed
+
+- Override org.thymeleaf:thymeleaf and org.thymeleaf:thymeleaf-spring6 to version 3.1.4.RELEASE due to CVE-2026-40477 and CVE-2026-40478
+
 ## [6.0.2] - 2026-04-13
 
 ### Changed

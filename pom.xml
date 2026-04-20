@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>7.0.1-alpha-springboot4-SNAPSHOT</version>
+    <version>7.0.2-alpha-springboot4-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -80,6 +80,10 @@
         <skip.surefire.tests>false</skip.surefire.tests>
         <skip.failsafe.tests>false</skip.failsafe.tests>
         <jeap.pact.provider.consumerversionselectors.raw>[{"mainBranch":true}, {"matchingBranch": true}, {"deployedOrReleased": true}]</jeap.pact.provider.consumerversionselectors.raw>
+
+        <!-- managed dependencies caused by vulnerabilities, version overrides due to CVEs -->
+        <tomcat-embed-core.version>11.0.21</tomcat-embed-core.version>
+        <jackson-bom.version>3.1.1</jackson-bom.version>
     </properties>
 
     <profiles>
@@ -432,6 +436,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Managed tomcat-embed-core will be removed with JEAP-6467 -->
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${tomcat-embed-core.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>

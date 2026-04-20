@@ -432,27 +432,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Managed tomcat-embed-core will be removed with JEAP-6467 -->
-            <dependency>
-                <groupId>org.apache.tomcat.embed</groupId>
-                <artifactId>tomcat-embed-core</artifactId>
-                <version>${tomcat-embed-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.lz4</groupId>
-                <artifactId>lz4-java</artifactId>
-                <version>${lz4-java.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>at.yawk.lz4</groupId>
-                <artifactId>lz4-java</artifactId>
-                <version>${yawk-lz4-java.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.bitbucket.b_c</groupId>
-                <artifactId>jose4j</artifactId>
-                <version>${jose4j.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>

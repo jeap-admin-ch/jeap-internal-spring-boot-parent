@@ -2,7 +2,7 @@ publiccodeYmlVersion: 0.5.0
 name: jeap-internal-spring-boot-parent
 applicationSuite: jEAP
 softwareVersion: 7.0.4-alpha-springboot4
-releaseDate: 2026-04-22
+releaseDate: 2026-04-23
 url: "https://github.com/jeap-admin-ch/jeap-internal-spring-boot-parent.git"
 landingURL: "https://github.com/jeap-admin-ch/jeap"
 platforms:

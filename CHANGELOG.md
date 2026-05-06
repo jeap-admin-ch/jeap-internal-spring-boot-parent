@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.4] - 2026-05-06
+
+### Changed
+
+- Spring Boot 3.5.14 (Fixes Thymeleaf CVE-2026-41901, removes the need for some version overrides due to updates)
+- Bouncy Castle 1.84 (Fixes CVE-2026-5598)
+- Postgresql 42.7.11 (Fixes CVE-2026-42198)
+
 ## [6.0.3] - 2026-04-16
 
 ### Changed

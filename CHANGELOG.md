@@ -8,16 +8,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 > - Spring Boot 3 maintenance (bug fixes, patches, and regular updates) continues on branch `release/springboot3`.
 > - The Spring Boot 4 upgrade process happens on the `master` branch, with the goal of releasing Spring Boot 4 compatible versions of all jeap components in a single major release.
 
-## [7.0.9-alpha-springboot4] - 2026-05-19
+## [7.0.0] - 2026-05-26
+- Official release with spring boot 4
 - Added org.apache.tomcat.embed:tomcat-embed-core as managed dependency with version 11.0.22 (replace 11.0.21) to fix CVEs
-
-## [7.0.8] - 2026-05-07
 - added io.rest-assured:spring-mock-mvc as dependency
-
-## [7.0.0] - 2026-xx-xx
-
 - Use new bump version patterns for maven helper plugin.
-- Upgrade to spring boot 4.
 
 ## [6.0.3] - 2026-04-16
 

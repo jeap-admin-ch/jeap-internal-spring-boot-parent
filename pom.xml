@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>8.0.1</version>
+    <version>8.0.2-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -77,6 +77,7 @@
         <rest-assured.version>6.0.0</rest-assured.version>
         <!-- Config -->
         <maven.javadoc.skip>true</maven.javadoc.skip>
+        <version-bump-postfix>-SNAPSHOT</version-bump-postfix>
         <maven-central-autopublish>true</maven-central-autopublish>
         <maven-central-wait-until>validated</maven-central-wait-until>
         <!-- Test config -->

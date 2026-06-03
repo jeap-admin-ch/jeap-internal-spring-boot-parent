@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>8.0.2-SNAPSHOT</version>
+    <version>8.1.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -54,16 +54,16 @@
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
-        <maven-enforcer-plugin.version>3.6.2</maven-enforcer-plugin.version>
+        <maven-enforcer-plugin.version>3.6.3</maven-enforcer-plugin.version>
         <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
-        <git-commit-id-maven-plugin.version>9.0.2</git-commit-id-maven-plugin.version>
+        <git-commit-id-maven-plugin.version>10.0.0</git-commit-id-maven-plugin.version>
         <shedlock.version>7.7.0</shedlock.version>
         <commons-collections4.version>4.5.0</commons-collections4.version>
         <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
         <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
-        <pact-jvm.version>4.6.20</pact-jvm.version>
-        <togglz.version>4.6.1</togglz.version>
-        <aws.sdk.version>2.42.36</aws.sdk.version>
+        <pact-jvm.version>4.7.1</pact-jvm.version>
+        <togglz.version>4.6.2</togglz.version>
+        <aws.sdk.version>2.46.0</aws.sdk.version>
         <bcpkix-jdk18on.version>1.84</bcpkix-jdk18on.version>
         <bcprov-jdk18on.version>1.84</bcprov-jdk18on.version>
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
@@ -72,7 +72,7 @@
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
         <jeap-central-publishing-maven-plugin.version>0.7.0.1</jeap-central-publishing-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-        <protobuf-java.version>4.34.1</protobuf-java.version>
+        <protobuf-java.version>4.35.0</protobuf-java.version>
         <testcontainers.version>2.0.5</testcontainers.version>
         <rest-assured.version>6.0.0</rest-assured.version>
         <!-- Config -->
@@ -87,7 +87,6 @@
 
         <!-- managed dependencies caused by vulnerabilities, version overrides due to CVEs -->
         <tomcat-embed-core.version>11.0.22</tomcat-embed-core.version>
-        <jackson-bom.version>3.1.1</jackson-bom.version>
 
         <!-- Override due to CVE-2026-42198 -->
         <postgresql.version>42.7.11</postgresql.version>

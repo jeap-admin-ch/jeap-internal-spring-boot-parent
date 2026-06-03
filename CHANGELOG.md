@@ -6,7 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 > - Spring Boot 3 maintenance (bug fixes, patches, and regular updates) continues on branch `release/springboot3`.
-> - The Spring Boot 4 upgrade process happens on the `master` branch, with the goal of releasing Spring Boot 4 compatible versions of all jeap components in a single major release.
+
+## [8.1.0] - 2026-06-03
+- Updated maven-enforcer-plugin from 3.6.2 to 3.6.3
+- Updated git-commit-id-maven-plugin from 9.0.2 to 10.0.0
+- Updated pact-jvm from 4.6.20 to 4.7.1
+- Updated togglz from 4.6.1 to 4.6.2
+- Updated aws.sdk from 2.43.36 to 2.46.0
+  - Users of ApacheHttpClient should switch to Apache5HttpClient
+- Updated com.google.protobuf:protobuf-java (managed dependency) from 4.34.1 to 4.35.0
+- Removed jackson dependency overwrite, spring boot 4.0.6 uses 3.1.2
+- Added renovate configuration
 
 ## [8.0.2] - 2026-06-03
 - re-add removed version-bump-postfix property to fix automated version update scripts

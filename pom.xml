@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>6.0.5-SNAPSHOT</version>
+    <version>6.0.6-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -90,6 +90,10 @@
         <postgresql.version>42.7.11</postgresql.version>
         <!-- Override due to CVE-2026-42193 -->
         <tomcat-embed-core.version>10.1.55</tomcat-embed-core.version>
+        <!-- Override due to CVE-2026-44249, CVE-2026-45416, CVE-2026-47244 and CVE-2026-45536 -->
+        <netty.version>4.1.135.Final</netty.version>
+        <!-- Override due to CVE-2025-48924 -->
+        <commons-lang3.version>3.18.0</commons-lang3.version>
     </properties>
 
     <profiles>

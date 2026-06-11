@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.6] - 2026-06-11
+
+### Changed
+
+- Override netty.version to 4.1.135.Final (replace 4.1.133.Final managed by Spring Boot) to fix CVE-2026-44249, CVE-2026-45416, CVE-2026-47244 and CVE-2026-45536
+- Override commons-lang3.version to 3.18.0 (replace 3.17.0 managed by Spring Boot) to fix CVE-2025-48924
+
 ## [6.0.5] - 2026-05-19
 
 ### Changed

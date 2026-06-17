@@ -30,12 +30,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- Also update the property spring-boot.version! -->
-        <version>4.0.7</version>
+        <version>4.1.0</version>
     </parent>
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>8.2.0-SNAPSHOT</version>
+    <version>8.3.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -49,7 +49,7 @@
         <!-- Also update the spring-boot-dependencies parent version! -->
         <!-- When updating, check if any 'Version overrides due to CVEs' below can be removed -->
         <spring-boot.version>4.0.7</spring-boot.version>
-        <spring-cloud.version>2025.1.1</spring-cloud.version>
+        <spring-cloud.version>2025.1.2</spring-cloud.version>
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
@@ -63,7 +63,7 @@
         <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
         <pact-jvm.version>4.7.1</pact-jvm.version>
         <togglz.version>4.6.2</togglz.version>
-        <aws.sdk.version>2.46.9</aws.sdk.version>
+        <aws.sdk.version>2.46.12</aws.sdk.version>
         <bcpkix-jdk18on.version>1.84</bcpkix-jdk18on.version>
         <bcprov-jdk18on.version>1.84</bcprov-jdk18on.version>
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>

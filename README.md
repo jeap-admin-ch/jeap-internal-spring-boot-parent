@@ -16,7 +16,7 @@ own build parent.
   and Javadoc, Pact, license compliance, GPG and Maven Central publishing)
 * Provides reusable profiles for version bumping, consumer-driven contract publishing and releasing
 
-For the full jEAP usage documentation see **<https://jeap-admin-ch.github.io/docs/using-jeap>**.
+For the full jEAP usage documentation see **[https://jeap-admin-ch.github.io/docs/using-jeap](https://jeap-admin-ch.github.io/docs/using-jeap)**.
 
 ## Documentation
 

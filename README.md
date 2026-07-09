@@ -16,22 +16,26 @@ own build parent.
   and Javadoc, Pact, license compliance, GPG and Maven Central publishing)
 * Provides reusable profiles for version bumping, consumer-driven contract publishing and releasing
 
-For the full jEAP usage documentation see **[https://jeap-admin-ch.github.io/docs/using-jeap](https://jeap-admin-ch.github.io/docs/using-jeap)**.
+For the full jEAP usage documentation see *
+*[https://jeap-admin-ch.github.io/docs/using-jeap](https://jeap-admin-ch.github.io/docs/using-jeap)**.
 
 ## Documentation
 
-| Topic                                                      | File                                                   |
-|------------------------------------------------------------|--------------------------------------------------------|
-| Getting started (use this parent in a library/application) | [docs/getting-started.md](docs/getting-started.md)     |
-| Dependency & plugin management overview                    | [docs/dependency-management.md](docs/dependency-management.md) |
+| Topic                                                      | File                                                                         |
+|------------------------------------------------------------|------------------------------------------------------------------------------|
+| Getting started (use this parent in a library/application) | [docs/getting-started.md](docs/getting-started.md)                           |
+| Dependency & plugin management overview                    | [docs/dependency-management.md](docs/dependency-management.md)               |
+| Dependent library validation on dependency-update branches | [docs/dependent-library-validation.md](docs/dependent-library-validation.md) |
 
 ## Changes
-This library is versioned using [Semantic Versioning](http://semver.org/) and all changes are documented in 
+
+This library is versioned using [Semantic Versioning](http://semver.org/) and all changes are documented in
 [CHANGELOG.md](./CHANGELOG.md) following the format defined in [Keep a Changelog](http://keepachangelog.com/).
 
 ## Note
 
-This repository is part the open source distribution of jEAP. See [github.com/jeap-admin-ch/jeap](https://github.com/jeap-admin-ch/jeap)
+This repository is part the open source distribution of jEAP.
+See [github.com/jeap-admin-ch/jeap](https://github.com/jeap-admin-ch/jeap)
 for more information.
 
 ## License

@@ -7,15 +7,15 @@ what the parent adds **on top** of Spring Boot. It is an orientation, not a full
 
 ## Key properties
 
-| Property                | Purpose                                              |
-|-------------------------|------------------------------------------------------|
-| `java.version`          | Java baseline (`25`)                                 |
-| `maven.compiler.release`| Compiler release level (`25`)                        |
-| `spring-boot.version`   | Spring Boot version; keep in sync with `<parent>`    |
-| `spring-cloud.version`  | Spring Cloud BOM version                             |
-| `aws.sdk.version`       | AWS SDK BOM version                                  |
-| `testcontainers.version`| Testcontainers BOM version                          |
-| `pact-jvm.version`      | Pact (consumer-driven contracts) version            |
+| Property                 | Purpose                                           |
+|--------------------------|---------------------------------------------------|
+| `java.version`           | Java baseline (`25`)                              |
+| `maven.compiler.release` | Compiler release level (`25`)                     |
+| `spring-boot.version`    | Spring Boot version; keep in sync with `<parent>` |
+| `spring-cloud.version`   | Spring Cloud BOM version                          |
+| `aws.sdk.version`        | AWS SDK BOM version                               |
+| `testcontainers.version` | Testcontainers BOM version                        |
+| `pact-jvm.version`       | Pact (consumer-driven contracts) version          |
 
 ## Imported BOMs
 

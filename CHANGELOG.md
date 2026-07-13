@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [8.4.0] - 2026-07-13
+
+### Dependencies
+- **software.amazon.awssdk:bom**: 2.46.17 → 2.47.5 (minor)
+- **org.bouncycastle:bcpkix-jdk18on**: 1.84 → 1.85 (minor)
+- **org.bouncycastle:bcprov-jdk18on**: 1.84 → 1.85 (minor)
+- **io.rest-assured:rest-assured**: 6.0.0 → 6.0.1 (patch)
+- **io.rest-assured:spring-mock-mvc**: 6.0.0 → 6.0.1 (patch)
+- **io.rest-assured:json-path**: 6.0.0 → 6.0.1 (patch)
+- **io.rest-assured:xml-path**: 6.0.0 → 6.0.1 (patch)
+
 ## [8.3.4] - 2026-06-29
 
 ### Dependencies

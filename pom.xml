@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>6.0.7-SNAPSHOT</version>
+    <version>6.0.8-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -86,14 +86,16 @@
         <lz4-java.version>1.8.1</lz4-java.version> <!-- CVE-2025-12183, transitive dependency of spring-kafka -> kafka-clients. Remove dependency below when no longer required. -->
         <yawk-lz4-java.version>1.10.2</yawk-lz4-java.version> <!-- CVE-2025-66566 transitive dependency of spring-kafka -> kafka-clients. Remove dependency below when no longer required. -->
         <jose4j.version>0.9.6</jose4j.version> <!-- CVE-2024-29371 transitive dependency of :spring-kafka-test 3.3.11. Remove dependency below when no longer required. -->
-        <!-- Override due to CVE-2026-42198 -->
-        <postgresql.version>42.7.11</postgresql.version>
+        <!-- Override due to CVE-2026-54291 -->
+        <postgresql.version>42.7.12</postgresql.version>
         <!-- Override due to CVE-2026-42193 -->
         <tomcat-embed-core.version>10.1.55</tomcat-embed-core.version>
         <!-- Override due to CVE-2026-44249, CVE-2026-45416, CVE-2026-47244 and CVE-2026-45536 -->
         <netty.version>4.1.135.Final</netty.version>
         <!-- Override due to CVE-2025-48924 -->
         <commons-lang3.version>3.18.0</commons-lang3.version>
+        <!-- Override due to CVE-2026-54515, CVE-2026-59889 and GHSA-mhm7-754m-9p8w -->
+        <jackson-bom.version>2.21.5</jackson-bom.version>
     </properties>
 
     <profiles>

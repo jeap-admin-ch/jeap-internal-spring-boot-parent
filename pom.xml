@@ -79,6 +79,10 @@
         <!-- Version overrides due to CVEs -->
         <!-- CVE-2026-54291 -->
         <postgresql.version>42.7.12</postgresql.version>
+        <!-- CVE-2026-54515, CVE-2026-59889, GHSA-mhm7-754m-9p8w (Jackson 2.x) -->
+        <jackson-2-bom.version>2.21.5</jackson-2-bom.version>
+        <!-- CVE-2026-59889 (Jackson 3.x) -->
+        <jackson-bom.version>3.1.5</jackson-bom.version>
         <!-- Config -->
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <version-bump-postfix>-SNAPSHOT</version-bump-postfix>

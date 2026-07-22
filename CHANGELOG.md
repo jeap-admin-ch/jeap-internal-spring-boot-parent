@@ -9,6 +9,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Dependencies
 - **org.postgresql:postgresql**: pinned to 42.7.12 due to CVE-2026-54291
+- **com.fasterxml.jackson:jackson-bom**: pinned to 2.21.5 due to CVE-2026-54515, CVE-2026-59889, GHSA-mhm7-754m-9p8w
+- **tools.jackson:jackson-bom**: pinned to 3.1.5 due to CVE-2026-59889
 - **software.amazon.awssdk:bom**: 2.48.3 → 2.49.0 (minor)
 
 ## [8.5.1] - 2026-07-18

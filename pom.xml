@@ -30,7 +30,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- Also update the property spring-boot.version! -->
-        <version>3.5.15</version>
+        <version>3.5.16</version>
     </parent>
 
     <groupId>ch.admin.bit.jeap</groupId>
@@ -48,7 +48,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Also update the spring-boot-dependencies parent version! -->
         <!-- When updating, check if any 'Version overrides due to CVEs' below can be removed -->
-        <spring-boot.version>3.5.15</spring-boot.version>
+        <spring-boot.version>3.5.16</spring-boot.version>
         <spring-cloud.version>2025.0.0</spring-cloud.version>
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
@@ -88,10 +88,6 @@
         <jose4j.version>0.9.6</jose4j.version> <!-- CVE-2024-29371 transitive dependency of :spring-kafka-test 3.3.11. Remove dependency below when no longer required. -->
         <!-- Override due to CVE-2026-54291 -->
         <postgresql.version>42.7.12</postgresql.version>
-        <!-- Override due to CVE-2026-42193 -->
-        <tomcat-embed-core.version>10.1.55</tomcat-embed-core.version>
-        <!-- Override due to CVE-2026-44249, CVE-2026-45416, CVE-2026-47244 and CVE-2026-45536 -->
-        <netty.version>4.1.135.Final</netty.version>
         <!-- Override due to CVE-2025-48924 -->
         <commons-lang3.version>3.18.0</commons-lang3.version>
         <!-- Override due to CVE-2026-54515, CVE-2026-59889 and GHSA-mhm7-754m-9p8w -->
@@ -448,18 +444,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Managed tomcat-embed-core due to CVEs -->
-            <dependency>
-                <groupId>org.apache.tomcat.embed</groupId>
-                <artifactId>tomcat-embed-core</artifactId>
-                <version>${tomcat-embed-core.version}</version>
-            </dependency>
-            <!-- Override due to CVE-2026-42198 -->
-            <dependency>
-                <groupId>org.postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>${postgresql.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.lz4</groupId>
                 <artifactId>lz4-java</artifactId>

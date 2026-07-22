@@ -9,8 +9,10 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Spring Boot 3.5.16
 - Override jackson-bom.version to 2.21.5 (replace 2.21.4 managed by Spring Boot) to fix CVE-2026-54515, CVE-2026-59889 and GHSA-mhm7-754m-9p8w
 - Override postgresql.version to 42.7.12 (replace 42.7.11 managed by Spring Boot) to fix CVE-2026-54291
+- Removed tomcat-embed-core and netty version overrides (Spring Boot 3.5.16 already manages the fixed versions 10.1.55 / 4.1.135.Final)
 
 ## [6.0.7] - 2026-05-15
 

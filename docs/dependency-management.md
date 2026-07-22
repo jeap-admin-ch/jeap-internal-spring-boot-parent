@@ -37,8 +37,19 @@ Versions for libraries not covered (or pinned differently) by Spring Boot, inclu
 - `logstash-logback-encoder`, `commons-collections4`, `protobuf-java`
 - Lombok (also added as a `provided` dependency to every project)
 
-CVE-driven overrides (e.g. `postgresql`, `tomcat-embed-core`) are grouped together with explanatory
-comments; revisit them whenever the Spring Boot version is upgraded.
+## Version overrides due to CVEs
+
+CVE-driven version overrides are grouped at the bottom of the version properties in `pom.xml`, each
+with a comment naming the CVE. How to pin depends on whether Spring Boot manages the artifact:
+
+- **Managed by Spring Boot** (e.g. `org.postgresql:postgresql` via `postgresql.version`): override
+  the version property only. The inherited `spring-boot-dependencies` entry references that
+  property, so no `<dependencyManagement>` entry is needed.
+- **Not managed by Spring Boot** (e.g. the transitive `org.lz4:lz4-java`): add both a version
+  property and a `<dependencyManagement>` entry.
+
+Revisit the overrides whenever the Spring Boot version is upgraded and remove any that the new
+Spring Boot BOM already covers.
 
 ## Managed plugins
 

@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>8.5.3-SNAPSHOT</version>
+    <version>8.5.4-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -85,6 +85,10 @@
         <jackson-bom.version>3.1.5</jackson-bom.version>
         <!--  CVE-2026-59901, CVE-2026-55831, CVE-2026-55833, CVE-2026-56745  (Netty) -->
         <netty.version>4.2.16.Final</netty.version>
+        <!-- CVE-2026-13006 (Expression Injection) -->
+        <logback.version>1.5.37</logback.version>
+        <!-- CVE-2026-53434, CVE-2026-55955 -->
+        <tomcat.version>11.0.23</tomcat.version>
         <!-- Config -->
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <version-bump-postfix>-SNAPSHOT</version-bump-postfix>

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [8.5.4] - 2026-07-23
+
+### Dependencies
+- **ch.qos.logback:logback-core**: pinned to 1.5.37 due to Expression Injection vulnerability CVE-2026-13006 (full fix; 1.5.36 was only a partial fix)
+- **org.apache.tomcat.embed:tomcat-embed-core**: pinned to 11.0.23 due to CVE-2026-55956 (Improper Authentication) and CVE-2026-55276 (Detection of Error Condition Without Action)
+
 ## [8.5.3] - 2026-07-23
 
 ### Dependencies

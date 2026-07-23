@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.9] - 2026-07-23
+
+### Changed
+
+- Override netty.version to 4.1.136.Final (replace 4.1.135.Final managed by Spring Boot) to fix CVE-2026-59901, CVE-2026-55831, CVE-2026-55833, CVE-2026-56745, CVE-2026-56746, CVE-2026-59898, CVE-2026-59899, CVE-2026-59900 and CVE-2026-59921
+- Added tools.jackson:jackson-bom 3.1.5 (Jackson 3.x, not managed by Spring Boot) as imported BOM to fix CVE-2026-59889
+- Added org.apache.httpcomponents:httpclient 4.5.14 (not managed by Spring Boot) as managed dependency to fix CVE-2020-13956
+- Added docs/dependency-management.md documenting how CVE-driven version overrides are managed (ported from the Spring Boot 4 branch)
+
 ## [6.0.8] - 2026-07-22
 
 ### Changed

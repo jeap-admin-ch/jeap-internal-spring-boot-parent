@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>6.0.8-SNAPSHOT</version>
+    <version>6.0.9-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -72,6 +72,26 @@
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
         <jeap-central-publishing-maven-plugin.version>0.7.0.1</jeap-central-publishing-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
+        <protobuf-java.version>3.25.8</protobuf-java.version>
+        <!-- Version overrides due to CVEs -->
+        <!-- CVE-2025-12183, transitive dependency of spring-kafka -> kafka-clients. Remove the dependencyManagement entry below when no longer required. -->
+        <lz4-java.version>1.8.1</lz4-java.version>
+        <!-- CVE-2025-66566, transitive dependency of spring-kafka -> kafka-clients. Remove the dependencyManagement entry below when no longer required. -->
+        <yawk-lz4-java.version>1.10.2</yawk-lz4-java.version>
+        <!-- CVE-2024-29371, transitive dependency of spring-kafka-test. Remove the dependencyManagement entry below when no longer required. -->
+        <jose4j.version>0.9.6</jose4j.version>
+        <!-- CVE-2026-54291 -->
+        <postgresql.version>42.7.12</postgresql.version>
+        <!-- CVE-2025-48924 -->
+        <commons-lang3.version>3.18.0</commons-lang3.version>
+        <!-- CVE-2026-54515, CVE-2026-59889, GHSA-mhm7-754m-9p8w (Jackson 2.x) -->
+        <jackson-bom.version>2.21.5</jackson-bom.version>
+        <!-- CVE-2026-59889 (Jackson 3.x, tools.jackson) - not managed by Spring Boot, see the dependencyManagement entry below -->
+        <jackson-3-bom.version>3.1.5</jackson-3-bom.version>
+        <!-- CVE-2026-59901, CVE-2026-55831, CVE-2026-55833, CVE-2026-56745, CVE-2026-56746, CVE-2026-59898, CVE-2026-59899, CVE-2026-59900, CVE-2026-59921 -->
+        <netty.version>4.1.136.Final</netty.version>
+        <!-- CVE-2020-13956 - not managed by Spring Boot, see the dependencyManagement entry below -->
+        <httpclient.version>4.5.14</httpclient.version>
         <!-- Config -->
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <version-bump-postfix>-SNAPSHOT</version-bump-postfix>
@@ -81,17 +101,6 @@
         <skip.surefire.tests>false</skip.surefire.tests>
         <skip.failsafe.tests>false</skip.failsafe.tests>
         <jeap.pact.provider.consumerversionselectors.raw>[{"mainBranch":true}, {"matchingBranch": true}, {"deployedOrReleased": true}]</jeap.pact.provider.consumerversionselectors.raw>
-        <!-- managed dependencies caused by vulnerabilities, version overrides due to CVEs -->
-        <protobuf-java.version>3.25.8</protobuf-java.version>
-        <lz4-java.version>1.8.1</lz4-java.version> <!-- CVE-2025-12183, transitive dependency of spring-kafka -> kafka-clients. Remove dependency below when no longer required. -->
-        <yawk-lz4-java.version>1.10.2</yawk-lz4-java.version> <!-- CVE-2025-66566 transitive dependency of spring-kafka -> kafka-clients. Remove dependency below when no longer required. -->
-        <jose4j.version>0.9.6</jose4j.version> <!-- CVE-2024-29371 transitive dependency of :spring-kafka-test 3.3.11. Remove dependency below when no longer required. -->
-        <!-- Override due to CVE-2026-54291 -->
-        <postgresql.version>42.7.12</postgresql.version>
-        <!-- Override due to CVE-2025-48924 -->
-        <commons-lang3.version>3.18.0</commons-lang3.version>
-        <!-- Override due to CVE-2026-54515, CVE-2026-59889 and GHSA-mhm7-754m-9p8w -->
-        <jackson-bom.version>2.21.5</jackson-bom.version>
     </properties>
 
     <profiles>
@@ -444,6 +453,7 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Version overrides due to CVEs for artifacts not managed by Spring Boot, see properties above -->
             <dependency>
                 <groupId>org.lz4</groupId>
                 <artifactId>lz4-java</artifactId>
@@ -458,6 +468,18 @@
                 <groupId>org.bitbucket.b_c</groupId>
                 <artifactId>jose4j</artifactId>
                 <version>${jose4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tools.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson-3-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>

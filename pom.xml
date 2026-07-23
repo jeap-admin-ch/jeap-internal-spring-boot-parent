@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>8.5.2-SNAPSHOT</version>
+    <version>8.5.3-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -63,7 +63,7 @@
         <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
         <pact-jvm.version>4.7.3</pact-jvm.version>
         <togglz.version>4.6.2</togglz.version>
-        <aws.sdk.version>2.49.0</aws.sdk.version>
+        <aws.sdk.version>2.49.1</aws.sdk.version>
         <bcpkix-jdk18on.version>1.85</bcpkix-jdk18on.version>
         <bcprov-jdk18on.version>1.85</bcprov-jdk18on.version>
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
@@ -83,6 +83,8 @@
         <jackson-2-bom.version>2.21.5</jackson-2-bom.version>
         <!-- CVE-2026-59889 (Jackson 3.x) -->
         <jackson-bom.version>3.1.5</jackson-bom.version>
+        <!--  CVE-2026-59901, CVE-2026-55831, CVE-2026-55833, CVE-2026-56745  (Netty) -->
+        <netty.version>4.2.16.Final</netty.version>
         <!-- Config -->
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <version-bump-postfix>-SNAPSHOT</version-bump-postfix>

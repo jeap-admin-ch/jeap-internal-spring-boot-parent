@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [8.8.0] - 2026-08-11
+
+### Dependencies
+- **org.apache.commons:commons-collections4**: 4.5.0 → 4.6.0 (minor)
+- **software.amazon.awssdk:bom**: 2.51.3 → 2.51.4 (patch)
+
 ## [8.7.1] - 2026-08-10
 
 ### Dependencies

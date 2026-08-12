@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>8.8.0-SNAPSHOT</version>
+    <version>8.9.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -47,36 +47,9 @@
         <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Also update the spring-boot-dependencies parent version! -->
-        <!-- When updating, check if any 'Version overrides due to CVEs' below can be removed -->
         <spring-boot.version>4.1.0</spring-boot.version>
         <spring-cloud.version>2025.1.2</spring-cloud.version>
-        <lombok.maven.version>1.18.20.0</lombok.maven.version>
-        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
-        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
-        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
-        <maven-enforcer-plugin.version>3.6.3</maven-enforcer-plugin.version>
-        <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
-        <git-commit-id-maven-plugin.version>10.0.0</git-commit-id-maven-plugin.version>
-        <shedlock.version>7.7.0</shedlock.version>
-        <commons-collections4.version>4.6.0</commons-collections4.version>
-        <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
-        <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
-        <pact-jvm.version>4.7.5</pact-jvm.version>
-        <togglz.version>4.6.2</togglz.version>
-        <aws.sdk.version>2.51.4</aws.sdk.version>
-        <bcpkix-jdk18on.version>1.85</bcpkix-jdk18on.version>
-        <bcprov-jdk18on.version>1.85.2</bcprov-jdk18on.version>
-        <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
-        <org.codehaus.mojo-license-maven-plugin.version>2.7.1</org.codehaus.mojo-license-maven-plugin.version>
-        <jeap-license-template.version>1.0.3</jeap-license-template.version>
-        <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
-        <jeap-central-publishing-maven-plugin.version>0.7.0.1</jeap-central-publishing-maven-plugin.version>
-        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-        <protobuf-java.version>4.35.1</protobuf-java.version>
-        <testcontainers.version>2.0.5</testcontainers.version>
-        <rest-assured.version>6.0.1</rest-assured.version>
-        <logstash.version>9.0</logstash.version>
-        <!-- Version overrides due to CVEs -->
+        <!-- When updating, check if any 'Version overrides due to CVEs' below can be removed -->
         <!-- CVE-2026-54291 -->
         <postgresql.version>42.7.12</postgresql.version>
         <!-- CVE-2026-54515, CVE-2026-59889, GHSA-mhm7-754m-9p8w (Jackson 2.x) -->
@@ -89,6 +62,68 @@
         <logback.version>1.5.37</logback.version>
         <!-- CVE-2026-53434, CVE-2026-55955 -->
         <tomcat.version>11.0.23</tomcat.version>
+
+        <!-- Plugin versions -->
+        <lombok.maven.version>1.18.20.0</lombok.maven.version>
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
+        <maven-enforcer-plugin.version>3.6.3</maven-enforcer-plugin.version>
+        <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
+        <git-commit-id-maven-plugin.version>10.0.0</git-commit-id-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
+        <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
+        <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
+        <org.codehaus.mojo-license-maven-plugin.version>2.7.1</org.codehaus.mojo-license-maven-plugin.version>
+        <jeap-license-template.version>1.0.3</jeap-license-template.version>
+        <jeap-central-publishing-maven-plugin.version>0.7.0.1</jeap-central-publishing-maven-plugin.version>
+        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
+
+        <!-- Dependency versions -->
+        <shedlock.version>7.7.0</shedlock.version>
+        <commons-collections4.version>4.6.0</commons-collections4.version>
+        <pact-jvm.version>4.7.5</pact-jvm.version>
+        <togglz.version>4.6.2</togglz.version>
+        <aws.sdk.version>2.51.4</aws.sdk.version>
+        <bcpkix-jdk18on.version>1.85</bcpkix-jdk18on.version>
+        <bcprov-jdk18on.version>1.85.2</bcprov-jdk18on.version>
+        <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
+        <protobuf-java.version>4.35.1</protobuf-java.version>
+        <testcontainers.version>2.0.5</testcontainers.version>
+        <rest-assured.version>6.0.1</rest-assured.version>
+        <logstash.version>9.0</logstash.version>
+        <java-uuid-generator.version>5.1.0</java-uuid-generator.version>
+        <json-schema-validator.version>2.2.14</json-schema-validator.version>
+        <jimfs.version>1.3.0</jimfs.version>
+        <networknt-json-schema-validator.version>3.0.6</networknt-json-schema-validator.version>
+        <commons-io.version>2.22.0</commons-io.version>
+        <kafka-avro-serializer.version>8.3.1</kafka-avro-serializer.version>
+        <testcontainers-floci.version>2.13.0</testcontainers-floci.version>
+        <avro.version>1.12.1</avro.version>
+        <commons-lang3.version>3.17.0</commons-lang3.version>
+        <commons-text.version>1.12.0</commons-text.version>
+        <maven-plugin-testing-harness.version>3.5.1</maven-plugin-testing-harness.version>
+        <maven-plugin-annotations.version>3.15.2</maven-plugin-annotations.version>
+        <maven-invoker.version>3.3.0</maven-invoker.version>
+        <maven.api.version>3.9.16</maven.api.version>
+        <plexus-utils.version>4.0.3</plexus-utils.version>
+        <plexus-xml.version>4.1.1</plexus-xml.version>
+        <org.eclipse.jgit.version>7.7.1.202607240634-r</org.eclipse.jgit.version>
+        <junit-pioneer.version>2.3.0</junit-pioneer.version>
+        <jmh.version>1.37</jmh.version>
+        <opensearch-java.version>3.9.0</opensearch-java.version>
+        <opensearch-testcontainers.version>4.1.0</opensearch-testcontainers.version>
+        <reflections.version>0.10.2</reflections.version>
+        <jsonassert.version>1.5.3</jsonassert.version>
+        <springdoc-openapi.version>3.1.0</springdoc-openapi.version>
+        <wiremock-spring-boot.version>4.2.2</wiremock-spring-boot.version>
+        <system-stubs.version>2.1.8</system-stubs.version>
+        <aws-advanced-jdbc-wrapper.version>4.3.0</aws-advanced-jdbc-wrapper.version>
+        <guava-testlib.version>33.6.0-jre</guava-testlib.version>
+        <file-management.version>3.2.0</file-management.version>
+        <schema-registry-serde.version>1.1.27</schema-registry-serde.version>
+        <aws-msk-iam-auth.version>2.3.7</aws-msk-iam-auth.version>
+
         <!-- Config -->
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <version-bump-postfix>-SNAPSHOT</version-bump-postfix>
@@ -596,6 +631,192 @@
                 <groupId>net.logstash.logback</groupId>
                 <artifactId>logstash-logback-encoder</artifactId>
                 <version>${logstash.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.uuid</groupId>
+                <artifactId>java-uuid-generator</artifactId>
+                <version>${java-uuid-generator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.java-json-tools</groupId>
+                <artifactId>json-schema-validator</artifactId>
+                <version>${json-schema-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.jimfs</groupId>
+                <artifactId>jimfs</artifactId>
+                <version>${jimfs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.networknt</groupId>
+                <artifactId>json-schema-validator</artifactId>
+                <version>${networknt-json-schema-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-avro-serializer</artifactId>
+                <version>${kafka-avro-serializer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.floci</groupId>
+                <artifactId>testcontainers-floci</artifactId>
+                <version>${testcontainers-floci.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro</artifactId>
+                <version>${avro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-compiler</artifactId>
+                <version>${avro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${commons-text.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugin-testing</groupId>
+                <artifactId>maven-plugin-testing-harness</artifactId>
+                <version>${maven-plugin-testing-harness.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugin-tools</groupId>
+                <artifactId>maven-plugin-annotations</artifactId>
+                <version>${maven-plugin-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.shared</groupId>
+                <artifactId>maven-invoker</artifactId>
+                <version>${maven-invoker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-artifact</artifactId>
+                <version>${maven.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-compat</artifactId>
+                <version>${maven.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-core</artifactId>
+                <version>${maven.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-plugin-api</artifactId>
+                <version>${maven.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-utils</artifactId>
+                <version>${plexus-utils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-xml</artifactId>
+                <version>${plexus-xml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jgit</groupId>
+                <artifactId>org.eclipse.jgit</artifactId>
+                <version>${org.eclipse.jgit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit-pioneer</groupId>
+                <artifactId>junit-pioneer</artifactId>
+                <version>${junit-pioneer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-core</artifactId>
+                <version>${jmh.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-generator-annprocess</artifactId>
+                <version>${jmh.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.opensearch.client</groupId>
+                <artifactId>opensearch-java</artifactId>
+                <version>${opensearch-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.opensearch</groupId>
+                <artifactId>opensearch-testcontainers</artifactId>
+                <version>${opensearch-testcontainers.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.skyscreamer</groupId>
+                <artifactId>jsonassert</artifactId>
+                <version>${jsonassert.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc-openapi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-common</artifactId>
+                <version>${springdoc-openapi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wiremock.integrations</groupId>
+                <artifactId>wiremock-spring-boot-standalone</artifactId>
+                <version>${wiremock-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>uk.org.webcompere</groupId>
+                <artifactId>system-stubs-jupiter</artifactId>
+                <version>${system-stubs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.jdbc</groupId>
+                <artifactId>aws-advanced-jdbc-wrapper</artifactId>
+                <version>${aws-advanced-jdbc-wrapper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava-testlib</artifactId>
+                <version>${guava-testlib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.shared</groupId>
+                <artifactId>file-management</artifactId>
+                <version>${file-management.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.glue</groupId>
+                <artifactId>schema-registry-serde</artifactId>
+                <version>${schema-registry-serde.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.msk</groupId>
+                <artifactId>aws-msk-iam-auth</artifactId>
+                <version>${aws-msk-iam-auth.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

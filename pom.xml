@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>8.9.1-SNAPSHOT</version>
+    <version>8.10.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -62,6 +62,8 @@
         <logback.version>1.5.37</logback.version>
         <!-- CVE-2026-53434, CVE-2026-55955 -->
         <tomcat.version>11.0.23</tomcat.version>
+        <!-- CVE-2026-54399 -->
+        <httpcore5.version>5.4.3</httpcore5.version>
 
         <!-- Plugin versions -->
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
@@ -78,6 +80,8 @@
         <jeap-license-template.version>1.0.3</jeap-license-template.version>
         <jeap-central-publishing-maven-plugin.version>0.7.0.1</jeap-central-publishing-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
+        <!-- Keep in sync with maven-plugin-annotations.version, the annotation processor used by this plugin -->
+        <maven-plugin-plugin.version>3.15.2</maven-plugin-plugin.version>
 
         <!-- Dependency versions -->
         <shedlock.version>7.7.0</shedlock.version>
@@ -1108,6 +1112,16 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>${maven-gpg-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${build-helper-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>${maven-plugin-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

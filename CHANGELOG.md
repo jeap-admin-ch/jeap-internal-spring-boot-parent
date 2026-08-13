@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [8.10.0] - 2026-08-13
+
+### Changed
+- Centralize `build-helper-maven-plugin` and `maven-plugin-plugin` versions into `pluginManagement` (previously duplicated across lib repos)
+
+### Dependencies
+- **org.apache.httpcomponents.core5:httpcore5**: 5.4.2 → 5.4.3 (CVE-2026-54399)
+
 ## [8.9.1] - 2026-08-12
 
 ### Changed

@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>8.11.0-SNAPSHOT</version>
+    <version>8.12.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -74,6 +74,7 @@
         <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
         <git-commit-id-maven-plugin.version>10.0.0</git-commit-id-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
+        <sonar-maven-plugin.version>5.7.0.6970</sonar-maven-plugin.version>
         <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
         <org.codehaus.mojo-license-maven-plugin.version>2.7.1</org.codehaus.mojo-license-maven-plugin.version>
@@ -925,6 +926,13 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <!-- Managed so that builds running 'mvn sonar:sonar' use a fixed plugin version instead of
+                     whatever version the artifact repository metadata currently resolves the plugin prefix to -->
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${sonar-maven-plugin.version}</version>
                 </plugin>
                 <!-- PACT consumer contract publication configuration-->
                 <plugin>

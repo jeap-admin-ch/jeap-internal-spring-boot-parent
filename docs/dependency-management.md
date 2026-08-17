@@ -58,6 +58,8 @@ Spring Boot BOM already covers.
 - `maven-compiler-plugin` (release `25`, full annotation processing, `-Xlint` flags)
 - `maven-surefire-plugin` / `maven-failsafe-plugin` (incl. Pact provider verification system properties)
 - `jacoco-maven-plugin` for coverage
+- `sonar-maven-plugin` for the Sonar analysis, managed so that `mvn sonar:sonar` runs a fixed plugin
+  version instead of the one the plugin prefix currently resolves to
 - `git-commit-id-maven-plugin` for build/git metadata
 - `lombok-maven-plugin` (delombok), `maven-source-plugin`, `maven-javadoc-plugin`
 - `au.com.dius.pact.provider:maven` for contract publishing

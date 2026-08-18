@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [8.13.0] - 2026-08-18
+
+### Dependencies
+- **software.amazon.awssdk:bom**: 2.53.1 → 2.53.2 (patch)
+- **com.google.jimfs:jimfs**: 1.3.1 → 1.3.2 (patch)
+- **io.floci:testcontainers-floci**: 2.13.0 → 2.14.0 (minor)
+- **com.google.guava:guava-testlib**: 33.6.0-jre → 33.7.1-jre (minor)
+
 ## [8.12.1] - 2026-08-18
 
 ### Dependencies

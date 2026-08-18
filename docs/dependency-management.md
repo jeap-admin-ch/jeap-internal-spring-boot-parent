@@ -45,7 +45,7 @@ with a comment naming the CVE. How to pin depends on whether Spring Boot manages
 - **Managed by Spring Boot** (e.g. `org.postgresql:postgresql` via `postgresql.version`): override
   the version property only. The inherited `spring-boot-dependencies` entry references that
   property, so no `<dependencyManagement>` entry is needed.
-- **Not managed by Spring Boot** (e.g. the transitive `org.lz4:lz4-java`): add both a version
+- **Not managed by Spring Boot** (e.g. the transitive `at.yawk.lz4:lz4-java`): add both a version
   property and a `<dependencyManagement>` entry.
 
 Revisit the overrides whenever the Spring Boot version is upgraded and remove any that the new

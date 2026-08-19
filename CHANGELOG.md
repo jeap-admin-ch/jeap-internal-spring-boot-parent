@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [8.14.0] - 2026-08-19
+
+### Dependencies
+- **org.apache.avro:avro**: 1.12.1 → 1.12.2 (patch)
+- **org.apache.avro:avro-compiler**: 1.12.1 → 1.12.2 (patch)
+
+Avro 1.12.2 hardens `org.apache.avro.util.ClassSecurityValidator`: classes referenced from Avro schemas have to be
+trusted explicitly. Libraries and services therefore require jeap-messaging 18.0.0 or newer, which registers a
+validator trusting the jEAP and application Avro classes (JEAP-7502).
+
 ## [8.13.0] - 2026-08-18
 
 ### Dependencies

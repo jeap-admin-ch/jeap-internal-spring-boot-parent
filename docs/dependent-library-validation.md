@@ -12,6 +12,10 @@ fails. The validated libraries cover the main dependencies managed in the intern
 - `jeap-spring-boot-config-aws-starter` (Spring Cloud, AWS SDK)
 - `jeap-messaging-sequential-inbox` (JPA/Hibernate, PostgreSQL, Flyway, ShedLock)
 - `jeap-spring-boot-jwe-starter` (JWE/Nimbus, BouncyCastle, Vault)
+- `jeap-open-api-publisher-starter` (springdoc/OpenAPI, HTTP client)
+- `jeap-spring-boot-tls-starter` (TLS/keystore handling, BouncyCastle)
+- `jeap-spring-boot-roles-anywhere-starter` (AWS SDK, IAM Roles Anywhere, BouncyCastle)
+- `jeap-spring-boot-db-migration-starter` (Flyway, JDBC drivers, Testcontainers)
 
 The validation job is defined in [verifyDependentRepo.groovy](../verifyDependentRepo.groovy)
 and validates one repository per build: it runs

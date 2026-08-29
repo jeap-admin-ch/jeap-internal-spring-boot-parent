@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>9.1.0-SNAPSHOT</version>
+    <version>9.2.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -65,7 +65,7 @@
         <!-- CVE-2026-54399 -->
         <httpcore5.version>5.4.3</httpcore5.version>
         <!-- CVE-2026-59949 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
-        <lz4-java.version>1.11.1</lz4-java.version>
+        <lz4-java.version>1.11.2</lz4-java.version>
 
         <!-- Plugin versions -->
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
@@ -87,25 +87,25 @@
         <maven-plugin-plugin.version>3.15.2</maven-plugin-plugin.version>
 
         <!-- Dependency versions -->
-        <shedlock.version>7.8.0</shedlock.version>
+        <shedlock.version>7.9.0</shedlock.version>
         <commons-collections4.version>4.6.0</commons-collections4.version>
         <pact-jvm.version>4.7.5</pact-jvm.version>
         <togglz.version>4.6.4</togglz.version>
-        <aws.sdk.version>2.53.2</aws.sdk.version>
+        <aws.sdk.version>2.54.7</aws.sdk.version>
         <bcpkix-jdk18on.version>1.85</bcpkix-jdk18on.version>
         <bcprov-jdk18on.version>1.85.2</bcprov-jdk18on.version>
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
-        <protobuf-java.version>4.35.1</protobuf-java.version>
+        <protobuf-java.version>4.36.0</protobuf-java.version>
         <testcontainers.version>2.0.5</testcontainers.version>
         <rest-assured.version>6.0.1</rest-assured.version>
         <logstash.version>9.0</logstash.version>
         <java-uuid-generator.version>5.2.0</java-uuid-generator.version>
         <json-schema-validator.version>2.2.14</json-schema-validator.version>
         <jimfs.version>1.3.2</jimfs.version>
-        <networknt-json-schema-validator.version>3.0.6</networknt-json-schema-validator.version>
+        <networknt-json-schema-validator.version>3.0.7</networknt-json-schema-validator.version>
         <commons-io.version>2.22.0</commons-io.version>
         <kafka-avro-serializer.version>8.3.1</kafka-avro-serializer.version>
-        <testcontainers-floci.version>2.14.0</testcontainers-floci.version>
+        <testcontainers-floci.version>2.15.0</testcontainers-floci.version>
         <avro.version>1.12.2</avro.version>
         <commons-lang3.version>3.20.0</commons-lang3.version>
         <commons-text.version>1.15.0</commons-text.version>
@@ -113,8 +113,8 @@
         <maven-plugin-annotations.version>3.15.2</maven-plugin-annotations.version>
         <maven-invoker.version>3.3.0</maven-invoker.version>
         <maven.api.version>3.9.16</maven.api.version>
-        <plexus-utils.version>4.0.3</plexus-utils.version>
-        <plexus-xml.version>4.1.1</plexus-xml.version>
+        <plexus-utils.version>4.1.0</plexus-utils.version>
+        <plexus-xml.version>4.2.0</plexus-xml.version>
         <org.eclipse.jgit.version>7.7.1.202607240634-r</org.eclipse.jgit.version>
         <junit-pioneer.version>2.3.0</junit-pioneer.version>
         <jmh.version>1.37</jmh.version>
@@ -125,7 +125,7 @@
         <springdoc-openapi.version>3.1.0</springdoc-openapi.version>
         <wiremock-spring-boot.version>4.2.2</wiremock-spring-boot.version>
         <system-stubs.version>2.1.8</system-stubs.version>
-        <aws-advanced-jdbc-wrapper.version>4.3.0</aws-advanced-jdbc-wrapper.version>
+        <aws-advanced-jdbc-wrapper.version>4.4.0</aws-advanced-jdbc-wrapper.version>
         <guava-testlib.version>33.7.1-jre</guava-testlib.version>
         <file-management.version>3.2.0</file-management.version>
         <schema-registry-serde.version>1.1.27</schema-registry-serde.version>

@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>9.2.0-SNAPSHOT</version>
+    <version>9.2.1-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -91,11 +91,11 @@
         <commons-collections4.version>4.6.0</commons-collections4.version>
         <pact-jvm.version>4.7.5</pact-jvm.version>
         <togglz.version>4.6.4</togglz.version>
-        <aws.sdk.version>2.54.7</aws.sdk.version>
+        <aws.sdk.version>2.54.9</aws.sdk.version>
         <bcpkix-jdk18on.version>1.85</bcpkix-jdk18on.version>
         <bcprov-jdk18on.version>1.85.2</bcprov-jdk18on.version>
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
-        <protobuf-java.version>4.36.0</protobuf-java.version>
+        <protobuf-java.version>4.36.1</protobuf-java.version>
         <testcontainers.version>2.0.5</testcontainers.version>
         <rest-assured.version>6.0.1</rest-assured.version>
         <logstash.version>9.0</logstash.version>

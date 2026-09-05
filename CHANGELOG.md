@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.3.0] - 2026-09-05
+
+### Dependencies
+- **org.apache.maven.plugins:maven-compiler-plugin**: 3.15.0 → 3.16.0 (minor)
+- **io.github.git-commit-id:git-commit-id-maven-plugin**: 10.0.0 → 10.0.1 (patch)
+- **net.javacrumbs.shedlock:shedlock-spring**: 7.9.0 → 7.10.0 (minor)
+- **net.javacrumbs.shedlock:shedlock-provider-jdbc-template**: 7.9.0 → 7.10.0 (minor)
+- **software.amazon.awssdk:bom**: 2.54.9 → 2.54.13 (patch)
+- **io.floci:testcontainers-floci**: 2.15.0 → 2.16.1 (minor)
+- **org.opensearch.client:opensearch-java**: 3.9.0 → 3.10.0 (minor)
+- **software.amazon.msk:aws-msk-iam-auth**: 2.3.7 → 2.3.8 (patch)
+
 ## [9.2.2] - 2026-09-03
 
 ### Dependencies

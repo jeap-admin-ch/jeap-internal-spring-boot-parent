@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>9.2.2-SNAPSHOT</version>
+    <version>9.3.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -69,12 +69,12 @@
 
         <!-- Plugin versions -->
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
-        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-enforcer-plugin.version>3.6.3</maven-enforcer-plugin.version>
         <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
-        <git-commit-id-maven-plugin.version>10.0.0</git-commit-id-maven-plugin.version>
+        <git-commit-id-maven-plugin.version>10.0.1</git-commit-id-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
         <sonar-maven-plugin.version>5.7.0.6970</sonar-maven-plugin.version>
         <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
@@ -87,11 +87,11 @@
         <maven-plugin-plugin.version>3.15.2</maven-plugin-plugin.version>
 
         <!-- Dependency versions -->
-        <shedlock.version>7.9.0</shedlock.version>
+        <shedlock.version>7.10.0</shedlock.version>
         <commons-collections4.version>4.6.0</commons-collections4.version>
         <pact-jvm.version>4.7.5</pact-jvm.version>
         <togglz.version>4.6.4</togglz.version>
-        <aws.sdk.version>2.54.9</aws.sdk.version>
+        <aws.sdk.version>2.54.13</aws.sdk.version>
         <bcpkix-jdk18on.version>1.85</bcpkix-jdk18on.version>
         <bcprov-jdk18on.version>1.85.2</bcprov-jdk18on.version>
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
@@ -105,7 +105,7 @@
         <networknt-json-schema-validator.version>3.0.7</networknt-json-schema-validator.version>
         <commons-io.version>2.22.0</commons-io.version>
         <kafka-avro-serializer.version>8.3.1</kafka-avro-serializer.version>
-        <testcontainers-floci.version>2.15.0</testcontainers-floci.version>
+        <testcontainers-floci.version>2.16.1</testcontainers-floci.version>
         <avro.version>1.12.2</avro.version>
         <commons-lang3.version>3.20.0</commons-lang3.version>
         <commons-text.version>1.15.0</commons-text.version>
@@ -118,7 +118,7 @@
         <org.eclipse.jgit.version>7.7.1.202607240634-r</org.eclipse.jgit.version>
         <junit-pioneer.version>2.3.0</junit-pioneer.version>
         <jmh.version>1.37</jmh.version>
-        <opensearch-java.version>3.9.0</opensearch-java.version>
+        <opensearch-java.version>3.10.0</opensearch-java.version>
         <opensearch-testcontainers.version>4.1.0</opensearch-testcontainers.version>
         <reflections.version>0.10.2</reflections.version>
         <jsonassert.version>1.5.3</jsonassert.version>
@@ -129,7 +129,7 @@
         <guava-testlib.version>33.7.1-jre</guava-testlib.version>
         <file-management.version>3.2.0</file-management.version>
         <schema-registry-serde.version>1.1.27</schema-registry-serde.version>
-        <aws-msk-iam-auth.version>2.3.7</aws-msk-iam-auth.version>
+        <aws-msk-iam-auth.version>2.3.8</aws-msk-iam-auth.version>
 
         <!-- Config -->
         <maven.javadoc.skip>true</maven.javadoc.skip>

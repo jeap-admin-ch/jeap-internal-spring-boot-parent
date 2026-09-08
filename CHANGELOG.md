@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.4.0] - 2026-09-08
+
+### Dependencies
+- **org.sonarsource.scanner.maven:sonar-maven-plugin**: 5.7.0.6970 → 5.8.0.7211 (minor)
+- **org.eclipse.jgit:org.eclipse.jgit**: 7.7.1.202607240634-r → 7.8.0.202609011348-r (minor)
+- **org.springdoc:springdoc-openapi-starter-webmvc-ui**: 3.1.0 → 3.1.1 (patch)
+- **org.springdoc:springdoc-openapi-starter-common**: 3.1.0 → 3.1.1 (patch)
+- **org.wiremock.integrations:wiremock-spring-boot-standalone**: 4.2.2 → 4.2.3 (patch)
+
 ## [9.3.0] - 2026-09-05
 
 ### Dependencies

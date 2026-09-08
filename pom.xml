@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>9.3.0-SNAPSHOT</version>
+    <version>9.4.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -76,7 +76,7 @@
         <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
         <git-commit-id-maven-plugin.version>10.0.1</git-commit-id-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
-        <sonar-maven-plugin.version>5.7.0.6970</sonar-maven-plugin.version>
+        <sonar-maven-plugin.version>5.8.0.7211</sonar-maven-plugin.version>
         <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
         <org.codehaus.mojo-license-maven-plugin.version>2.7.1</org.codehaus.mojo-license-maven-plugin.version>
@@ -115,15 +115,15 @@
         <maven.api.version>3.9.16</maven.api.version>
         <plexus-utils.version>4.1.0</plexus-utils.version>
         <plexus-xml.version>4.2.0</plexus-xml.version>
-        <org.eclipse.jgit.version>7.7.1.202607240634-r</org.eclipse.jgit.version>
+        <org.eclipse.jgit.version>7.8.0.202609011348-r</org.eclipse.jgit.version>
         <junit-pioneer.version>2.3.0</junit-pioneer.version>
         <jmh.version>1.37</jmh.version>
         <opensearch-java.version>3.10.0</opensearch-java.version>
         <opensearch-testcontainers.version>4.1.0</opensearch-testcontainers.version>
         <reflections.version>0.10.2</reflections.version>
         <jsonassert.version>1.5.3</jsonassert.version>
-        <springdoc-openapi.version>3.1.0</springdoc-openapi.version>
-        <wiremock-spring-boot.version>4.2.2</wiremock-spring-boot.version>
+        <springdoc-openapi.version>3.1.1</springdoc-openapi.version>
+        <wiremock-spring-boot.version>4.2.3</wiremock-spring-boot.version>
         <system-stubs.version>2.1.8</system-stubs.version>
         <aws-advanced-jdbc-wrapper.version>4.4.0</aws-advanced-jdbc-wrapper.version>
         <guava-testlib.version>33.7.1-jre</guava-testlib.version>

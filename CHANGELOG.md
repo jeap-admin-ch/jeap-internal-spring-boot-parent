@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.4.1] - 2026-09-09
+
+### Dependencies
+- **io.netty:netty-bom**: 4.2.16.Final → 4.2.17.Final (security patch for CVE-2026-75595)
+
+### Removed
+- Version overrides due to CVEs that Spring Boot 4.1.1 already provides at the same or a newer version:
+  `netty.version` (4.2.17.Final), `postgresql.version` (42.7.13), `logback.version` (1.5.38),
+  `jackson-bom.version` (3.1.5) and `httpcore5.version` (5.4.3). Three of them had become downgrades.
+
 ## [9.4.0] - 2026-09-08
 
 ### Dependencies

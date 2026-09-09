@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.5.0] - 2026-09-11
+
+### Changed
+- Introduced a new settings-based Pact broker configuration (`jeap.pact.broker.default-url`) while retaining the BIT Pact
+  broker as default for now. Relying on the old default is deprecated, it will be removed in a future release. Configure
+  your Pact broker by setting the new `jeap.pact.broker.default-url` property instead.
+- Switched from the deprecated host/scheme/port Pact broker URL configuration to the `pactbroker.url` configuration. 
+
 ## [9.4.2] - 2026-09-10
 
 ### Dependencies

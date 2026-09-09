@@ -55,7 +55,8 @@ behind the version the Spring Boot BOM manages. Run it locally with `ci/check-ve
 `<pluginManagement>` and the active `<build><plugins>` configure the shared build, including:
 
 - `maven-compiler-plugin` (release `25`, full annotation processing, `-Xlint` flags)
-- `maven-surefire-plugin` / `maven-failsafe-plugin` (incl. Pact provider verification system properties)
+- `maven-surefire-plugin` (including Pact provider system properties)
+- `maven-failsafe-plugin` (integration tests)
 - `jacoco-maven-plugin` for coverage
 - `sonar-maven-plugin` for the Sonar analysis, managed so that `mvn sonar:sonar` runs a fixed plugin
   version instead of the one the plugin prefix currently resolves to

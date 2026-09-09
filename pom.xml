@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>9.4.2-SNAPSHOT</version>
+    <version>9.5.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -124,6 +124,11 @@
         <!-- Test config -->
         <skip.surefire.tests>false</skip.surefire.tests>
         <skip.failsafe.tests>false</skip.failsafe.tests>
+        <!-- Pact broker config -->
+        <!-- Default is deprecated and will be removed in a future release -->
+        <jeap.pact.broker.default-url>https://pactbroker.bit.admin.ch/</jeap.pact.broker.default-url>
+        <!-- Separate property allows the project POM to override the broker default supplied by Maven settings -->
+        <pactbroker.url>${jeap.pact.broker.default-url}</pactbroker.url>
         <jeap.pact.provider.consumerversionselectors.raw>[{"mainBranch":true}, {"matchingBranch": true}, {"deployedOrReleased": true}]</jeap.pact.provider.consumerversionselectors.raw>
     </properties>
 
@@ -842,8 +847,7 @@
                         <useSystemClassLoader>false</useSystemClassLoader>
                         <systemPropertyVariables>
                             <!-- PACT provider contract verification configuration by system properties -->
-                            <pactbroker.host>pactbroker.bit.admin.ch</pactbroker.host>
-                            <pactbroker.scheme>https</pactbroker.scheme>
+                            <pactbroker.url>${pactbroker.url}</pactbroker.url>
                             <pactbroker.enablePending>true</pactbroker.enablePending>
                             <pactbroker.consumerversionselectors.rawjson>${jeap.pact.provider.consumerversionselectors.raw}</pactbroker.consumerversionselectors.rawjson>
                             <pactbroker.providerBranch>${git.branch}</pactbroker.providerBranch>
@@ -919,7 +923,7 @@
                     <version>${pact-jvm.version}</version>
                     <configuration>
                         <pactDirectory>${project.build.directory}/pacts</pactDirectory>
-                        <pactBrokerUrl>https://pactbroker.bit.admin.ch/</pactBrokerUrl>
+                        <pactBrokerUrl>${pactbroker.url}</pactBrokerUrl>
                         <projectVersion>${project.version}-${git.commit.id.abbrev}</projectVersion>
                         <branchName>${git.branch}</branchName>
                         <skipPactPublish>true</skipPactPublish>

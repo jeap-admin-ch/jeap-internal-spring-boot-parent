@@ -10,10 +10,22 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Dependencies
 - **io.netty:netty-bom**: 4.2.16.Final → 4.2.17.Final (security patch for CVE-2026-75595)
 
+### Added
+- CI check (`ci/check-version-pins.sh`, run by every CI build) that fails the
+  build on version pins which are equal to or behind the version managed by the
+  `spring-boot-dependencies` BOM, because such a pin no longer raises the version and becomes a
+  downgrade at the next Spring Boot upgrade. See [docs/version-pin-check.md](docs/version-pin-check.md).
+
 ### Removed
 - Version overrides due to CVEs that Spring Boot 4.1.1 already provides at the same or a newer version:
   `netty.version` (4.2.17.Final), `postgresql.version` (42.7.13), `logback.version` (1.5.38),
   `jackson-bom.version` (3.1.5) and `httpcore5.version` (5.4.3). Three of them had become downgrades.
+- Version pins that repeated the version managed by Spring Boot 4.1.1, along with the
+  `<dependencyManagement>` and `<pluginManagement>` entries that only carried them:
+  `commons-lang3.version` (3.20.0), `jsonassert.version` (1.5.3), `testcontainers.version` (2.0.5),
+  `maven-source-plugin.version` (3.4.0), `maven-javadoc-plugin.version` (3.12.0),
+  `maven-enforcer-plugin.version` (3.6.3) and `build-helper-maven-plugin.version` (3.6.1). The
+  effective versions are unchanged - they now come from the Spring Boot BOM.
 
 ## [9.4.0] - 2026-09-08
 

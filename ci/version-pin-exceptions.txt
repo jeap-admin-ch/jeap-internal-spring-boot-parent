@@ -1,0 +1,12 @@
+# Version pins that are deliberately kept although they are equal to or behind the
+# version managed by the spring-boot-dependencies BOM. Checked by
+# ci/check-version-pins.sh - see docs/dependency-management.md.
+#
+# Format, one per line:
+#   <property name>=<reason the pin has to stay>
+#
+# Example:
+#   netty.version=held back, 4.3.x breaks the AWS SDK HTTP client
+#
+# Keep this file empty unless a pin really has to stay: the check reports entries
+# that are no longer needed as STALE.

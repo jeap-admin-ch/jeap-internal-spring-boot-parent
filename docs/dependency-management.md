@@ -14,7 +14,6 @@ what the parent adds **on top** of Spring Boot. It is an orientation, not a full
 | `spring-boot.version`    | Spring Boot version; keep in sync with `<parent>` |
 | `spring-cloud.version`   | Spring Cloud BOM version                          |
 | `aws.sdk.version`        | AWS SDK BOM version                               |
-| `testcontainers.version` | Testcontainers BOM version                        |
 | `pact-jvm.version`       | Pact (consumer-driven contracts) version          |
 
 ## Imported BOMs
@@ -23,7 +22,6 @@ The `<dependencyManagement>` section imports these BOMs (`type=pom`, `scope=impo
 
 - `org.springframework.cloud:spring-cloud-dependencies`
 - `software.amazon.awssdk:bom`
-- `org.testcontainers:testcontainers-bom`
 
 ## Additionally managed dependencies
 
@@ -48,8 +46,9 @@ with a comment naming the CVE. How to pin depends on whether Spring Boot manages
 - **Not managed by Spring Boot** (e.g. the transitive `at.yawk.lz4:lz4-java`): add both a version
   property and a `<dependencyManagement>` entry.
 
-Revisit the overrides whenever the Spring Boot version is upgraded and remove any that the new
-Spring Boot BOM already covers.
+Overrides do not have to be revisited by hand: every CI build runs the
+[version pin check](version-pin-check.md), which fails the build as soon as a pin is equal to or
+behind the version the Spring Boot BOM manages. Run it locally with `ci/check-version-pins.sh`.
 
 ## Managed plugins
 
@@ -78,6 +77,7 @@ Spring Boot BOM already covers.
 
 ## Related
 
+- [Version pin check](version-pin-check.md)
 - [Getting started](getting-started.md)
 - [jeap-internal-spring-boot-parent](../README.md)
 - [jEAP usage documentation](https://jeap-admin-ch.github.io/docs/using-jeap)

@@ -26,6 +26,7 @@ For the full jEAP usage documentation see *
 | Getting started (use this parent in a library/application) | [docs/getting-started.md](docs/getting-started.md)                           |
 | Dependency & plugin management overview                    | [docs/dependency-management.md](docs/dependency-management.md)               |
 | Dependent library validation on dependency-update branches | [docs/dependent-library-validation.md](docs/dependent-library-validation.md) |
+| Version pin check (pins Spring Boot has caught up with)    | [docs/version-pin-check.md](docs/version-pin-check.md)                       |
 
 ## Changes
 

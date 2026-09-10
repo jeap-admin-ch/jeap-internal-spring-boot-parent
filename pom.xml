@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>9.4.1-SNAPSHOT</version>
+    <version>9.4.2-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -56,6 +56,8 @@
         <tomcat.version>11.0.25</tomcat.version>
         <!-- CVE-2026-59949 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
         <lz4-java.version>1.11.2</lz4-java.version>
+        <!-- CVE-2026-87795 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
+        <zstd-jni.version>1.5.7-16</zstd-jni.version>
 
         <!-- Plugin versions -->
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
@@ -792,6 +794,12 @@
                 <groupId>at.yawk.lz4</groupId>
                 <artifactId>lz4-java</artifactId>
                 <version>${lz4-java.version}</version>
+            </dependency>
+            <!-- Version override due to CVE-2026-87795, see the zstd-jni.version property -->
+            <dependency>
+                <groupId>com.github.luben</groupId>
+                <artifactId>zstd-jni</artifactId>
+                <version>${zstd-jni.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

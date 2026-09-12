@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>9.5.0-SNAPSHOT</version>
+    <version>9.6.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -65,23 +65,23 @@
         <git-commit-id-maven-plugin.version>10.0.1</git-commit-id-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
         <sonar-maven-plugin.version>5.8.0.7211</sonar-maven-plugin.version>
-        <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
+        <exec-maven-plugin.version>3.6.4</exec-maven-plugin.version>
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
         <org.codehaus.mojo-license-maven-plugin.version>2.7.1</org.codehaus.mojo-license-maven-plugin.version>
         <jeap-license-template.version>1.0.3</jeap-license-template.version>
         <jeap-central-publishing-maven-plugin.version>0.7.0.1</jeap-central-publishing-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <!-- Keep in sync with maven-plugin-annotations.version, the annotation processor used by this plugin -->
-        <maven-plugin-plugin.version>3.15.2</maven-plugin-plugin.version>
+        <maven-plugin-plugin.version>3.16.0</maven-plugin-plugin.version>
 
         <!-- Dependency versions -->
-        <shedlock.version>7.10.0</shedlock.version>
+        <shedlock.version>7.10.1</shedlock.version>
         <commons-collections4.version>4.6.0</commons-collections4.version>
         <pact-jvm.version>4.7.5</pact-jvm.version>
         <togglz.version>4.6.4</togglz.version>
-        <aws.sdk.version>2.54.13</aws.sdk.version>
-        <bcpkix-jdk18on.version>1.85</bcpkix-jdk18on.version>
-        <bcprov-jdk18on.version>1.85.2</bcprov-jdk18on.version>
+        <aws.sdk.version>2.54.17</aws.sdk.version>
+        <bcpkix-jdk18on.version>1.86</bcpkix-jdk18on.version>
+        <bcprov-jdk18on.version>1.86</bcprov-jdk18on.version>
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
         <protobuf-java.version>4.36.1</protobuf-java.version>
         <rest-assured.version>6.0.1</rest-assured.version>
@@ -96,7 +96,7 @@
         <avro.version>1.12.2</avro.version>
         <commons-text.version>1.15.0</commons-text.version>
         <maven-plugin-testing-harness.version>3.5.1</maven-plugin-testing-harness.version>
-        <maven-plugin-annotations.version>3.15.2</maven-plugin-annotations.version>
+        <maven-plugin-annotations.version>3.16.0</maven-plugin-annotations.version>
         <maven-invoker.version>3.3.0</maven-invoker.version>
         <maven.api.version>3.9.16</maven.api.version>
         <plexus-utils.version>4.1.0</plexus-utils.version>

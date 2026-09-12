@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.6.0] - 2026-09-12
+
+### Dependencies
+- **org.codehaus.mojo:exec-maven-plugin**: 3.6.3 → 3.6.4 (patch)
+- **org.apache.maven.plugins:maven-plugin-plugin**: 3.15.2 → 3.16.0 (minor)
+- **net.javacrumbs.shedlock:shedlock-spring**: 7.10.0 → 7.10.1 (patch)
+- **net.javacrumbs.shedlock:shedlock-provider-jdbc-template**: 7.10.0 → 7.10.1 (patch)
+- **software.amazon.awssdk:bom**: 2.54.13 → 2.54.17 (patch)
+- **org.bouncycastle:bcpkix-jdk18on**: 1.85 → 1.86 (minor)
+- **org.bouncycastle:bcprov-jdk18on**: 1.85.2 → 1.86 (minor)
+- **org.apache.maven.plugin-tools:maven-plugin-annotations**: 3.15.2 → 3.16.0 (minor)
+
 ## [9.5.0] - 2026-09-11
 
 ### Changed

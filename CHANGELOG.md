@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [9.6.1] - 2026-09-15
+
+### Dependencies
+- **com.fasterxml.jackson:jackson-bom**: 2.22.1 → 2.22.2 (security patch for CVE-2026-68497, CPU
+  exhaustion via `Duration`/`XMLGregorianCalendar` deserialization)
+- **tools.jackson:jackson-bom**: 3.1.5 → 3.2.2 (new override for the same CVE-2026-68497; this
+  Jackson 3.x BOM was previously left unpinned)
+
 ## [9.6.0] - 2026-09-12
 
 ### Dependencies

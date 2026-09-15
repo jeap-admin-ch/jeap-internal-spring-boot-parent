@@ -31,10 +31,11 @@ Without options the script reads `pom.xml`, fetches the `spring-boot-dependencie
 `spring-boot.version` with `./mvnw dependency:copy` and prints one line per compared pin:
 
 ```
-[version-pins] Spring Boot 4.1.1 - 5 pins compared with the BOM
+[version-pins] Spring Boot 4.1.1 - 6 pins compared with the BOM
 
 OK     git-commit-id-maven-plugin.version     10.0.1                 > 9.2.0
-OK     jackson-2-bom.version                  2.22.1                 > 2.21.5
+OK     jackson-2-bom.version                  2.22.2                 > 2.21.5
+OK     jackson-bom.version                    3.2.2                  > 3.1.5
 OK     maven-compiler-plugin.version          3.16.0                 > 3.15.0
 OK     protobuf-java.version                  4.36.1                 > 4.35.1
 OK     tomcat.version                         11.0.25                > 11.0.24

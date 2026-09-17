@@ -71,7 +71,7 @@
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
         <org.codehaus.mojo-license-maven-plugin.version>2.7.1</org.codehaus.mojo-license-maven-plugin.version>
         <jeap-license-template.version>1.0.3</jeap-license-template.version>
-        <jeap-central-publishing-maven-plugin.version>0.11.0.1-feature-JEAP-7625-upstream-0-11-0-SNAPSHOT</jeap-central-publishing-maven-plugin.version>
+        <jeap-central-publishing-maven-plugin.version>0.11.0.1</jeap-central-publishing-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <!-- Keep in sync with maven-plugin-annotations.version, the annotation processor used by this plugin -->
         <maven-plugin-plugin.version>3.16.0</maven-plugin-plugin.version>

@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [10.0.0] - 2026-09-19
+
+### Dependencies
+- **com.github.luben:zstd-jni**: 1.5.7-16 → 1.5.7-17 (patch)
+- **ch.admin.bit.jeap:jeap-license-template**: 1.0.3 → 1.1.0 (minor)
+- **software.amazon.awssdk:bom**: 2.54.18 → 2.55.1 (minor)
+- **com.google.protobuf:protobuf-java**: 4.36.1 → 4.36.2 (patch)
+- **io.confluent:kafka-avro-serializer**: 8.3.1 → 8.3.2 (patch)
+- **software.amazon.glue:schema-registry-serde**: 1.1.27 → 2.0.0 (major)
+
 ## [9.7.1] - 2026-09-17
 
 ### Dependencies

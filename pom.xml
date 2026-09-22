@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>10.0.0-SNAPSHOT</version>
+    <version>10.0.1-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -60,6 +60,9 @@
         <lz4-java.version>1.11.3</lz4-java.version>
         <!-- CVE-2026-87795 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
         <zstd-jni.version>1.5.7-17</zstd-jni.version>
+        <!-- CVE-2022-36944 (transitive dependency of com.kjetland:mbknor-jackson-jsonschema_2.13, pulled in by
+             io.confluent:kafka-avro-serializer and software.amazon.glue:schema-registry-serde) -->
+        <scala-library.version>2.13.17</scala-library.version>
 
         <!-- Plugin versions -->
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
@@ -807,6 +810,12 @@
                 <groupId>com.github.luben</groupId>
                 <artifactId>zstd-jni</artifactId>
                 <version>${zstd-jni.version}</version>
+            </dependency>
+            <!-- Version override due to CVE-2022-36944, see the scala-library.version property -->
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala-library.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

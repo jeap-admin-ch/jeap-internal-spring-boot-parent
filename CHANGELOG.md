@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [10.0.1] - 2026-09-22
+
+### Fixed
+- Pinned `org.scala-lang:scala-library` to 2.13.17 to fix CVE-2022-36944, a transitive dependency
+  of `com.kjetland:mbknor-jackson-jsonschema_2.13` pulled in by `io.confluent:kafka-avro-serializer`
+  and `software.amazon.glue:schema-registry-serde`.
+
 ## [10.0.0] - 2026-09-19
 
 ### Dependencies

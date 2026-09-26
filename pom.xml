@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>11.0.0-SNAPSHOT</version>
+    <version>11.1.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -57,9 +57,9 @@
         <!-- CVE-2026-65182, CVE-2026-65905, CVE-2026-68525 -->
         <tomcat.version>11.0.25</tomcat.version>
         <!-- CVE-2026-59949 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
-        <lz4-java.version>1.11.3</lz4-java.version>
+        <lz4-java.version>1.12.0</lz4-java.version>
         <!-- CVE-2026-87795 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
-        <zstd-jni.version>1.5.7-18</zstd-jni.version>
+        <zstd-jni.version>1.5.7-20</zstd-jni.version>
         <!-- CVE-2022-36944 (transitive dependency of com.kjetland:mbknor-jackson-jsonschema_2.13, pulled in by
              io.confluent:kafka-avro-serializer and software.amazon.glue:schema-registry-serde) -->
         <scala-library.version>3.9.0</scala-library.version>
@@ -84,7 +84,7 @@
         <commons-collections4.version>4.6.0</commons-collections4.version>
         <pact-jvm.version>4.7.5</pact-jvm.version>
         <togglz.version>4.6.4</togglz.version>
-        <aws.sdk.version>2.55.2</aws.sdk.version>
+        <aws.sdk.version>2.55.6</aws.sdk.version>
         <bcpkix-jdk18on.version>1.86</bcpkix-jdk18on.version>
         <bcprov-jdk18on.version>1.86</bcprov-jdk18on.version>
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
@@ -119,7 +119,7 @@
         <guava-testlib.version>33.7.1-jre</guava-testlib.version>
         <file-management.version>3.2.0</file-management.version>
         <schema-registry-serde.version>2.0.0</schema-registry-serde.version>
-        <aws-msk-iam-auth.version>2.3.8</aws-msk-iam-auth.version>
+        <aws-msk-iam-auth.version>2.3.9</aws-msk-iam-auth.version>
 
         <!-- Config -->
         <maven.javadoc.skip>true</maven.javadoc.skip>

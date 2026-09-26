@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.1.0] - 2026-09-26
+
+### Dependencies
+- **at.yawk.lz4:lz4-java**: 1.11.3 → 1.12.0 (minor)
+- **com.github.luben:zstd-jni**: 1.5.7-18 → 1.5.7-20 (patch)
+- **software.amazon.awssdk:bom**: 2.55.2 → 2.55.6 (patch)
+- **software.amazon.msk:aws-msk-iam-auth**: 2.3.8 → 2.3.9 (patch)
+
 ## [11.0.0] - 2026-09-22
 
 ### Dependencies

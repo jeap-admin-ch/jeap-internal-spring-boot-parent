@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>11.1.0-SNAPSHOT</version>
+    <version>11.1.1-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -84,7 +84,7 @@
         <commons-collections4.version>4.6.0</commons-collections4.version>
         <pact-jvm.version>4.7.5</pact-jvm.version>
         <togglz.version>4.6.4</togglz.version>
-        <aws.sdk.version>2.55.6</aws.sdk.version>
+        <aws.sdk.version>2.55.7</aws.sdk.version>
         <bcpkix-jdk18on.version>1.86</bcpkix-jdk18on.version>
         <bcprov-jdk18on.version>1.86</bcprov-jdk18on.version>
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
@@ -116,7 +116,7 @@
         <wiremock-spring-boot.version>4.4.2</wiremock-spring-boot.version>
         <system-stubs.version>2.1.8</system-stubs.version>
         <aws-advanced-jdbc-wrapper.version>4.4.0</aws-advanced-jdbc-wrapper.version>
-        <guava-testlib.version>33.7.1-jre</guava-testlib.version>
+        <guava-testlib.version>33.7.2-jre</guava-testlib.version>
         <file-management.version>3.2.0</file-management.version>
         <schema-registry-serde.version>2.0.0</schema-registry-serde.version>
         <aws-msk-iam-auth.version>2.3.9</aws-msk-iam-auth.version>

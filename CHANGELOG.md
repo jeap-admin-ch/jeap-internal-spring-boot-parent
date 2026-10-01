@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.1.2] - 2026-10-01
+
+### Dependencies
+- **com.fasterxml.jackson:jackson-bom**: 2.22.2 → 2.22.3 (security patches for CVE-2026-91776 and CVE-2026-91777)
+- **tools.jackson:jackson-bom**: 3.2.2 → 3.2.3 (security patches for CVE-2026-91776 and CVE-2026-91777)
+
 ## [11.1.1] - 2026-09-29
 
 ### Dependencies

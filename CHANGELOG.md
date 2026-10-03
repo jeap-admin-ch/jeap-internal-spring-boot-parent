@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.2.0] - 2026-10-03
+
+### Dependencies
+- **software.amazon.awssdk:bom**: 2.55.7 → 2.55.11 (patch)
+- **com.networknt:json-schema-validator**: 3.0.7 → 3.0.8 (patch)
+- **org.apache.maven:maven-artifact**: 3.9.16 → 3.10.0 (minor)
+- **org.apache.maven:maven-compat**: 3.9.16 → 3.10.0 (minor)
+- **org.apache.maven:maven-core**: 3.9.16 → 3.10.0 (minor)
+- **org.apache.maven:maven-plugin-api**: 3.9.16 → 3.10.0 (minor)
+
 ## [11.1.3] - 2026-10-01
 
 ### Dependencies

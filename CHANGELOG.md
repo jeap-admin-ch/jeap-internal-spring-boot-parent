@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.3.0] - 2026-10-06
+
+### Dependencies
+- **com.github.luben:zstd-jni**: 1.5.7-20 → 1.5.7-21 (patch)
+- **org.scala-lang:scala-library**: 3.9.0 → 3.10.0 (minor)
+- **org.wiremock.integrations:wiremock-spring-boot-standalone**: 4.4.2 → 4.4.3 (patch)
+
 ## [11.2.0] - 2026-10-03
 
 ### Dependencies

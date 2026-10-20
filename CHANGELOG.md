@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.6.0] - 2026-10-20
+
+### Dependencies
+- **com.github.luben:zstd-jni**: 1.5.7-23 → 1.5.7-24 (patch)
+- **software.amazon.awssdk:bom**: 2.56.0 → 2.57.0 (minor)
+- **io.floci:testcontainers-floci**: 2.16.1 → 2.17.0 (minor)
+
 ## [11.5.0] - 2026-10-17
 
 ### Dependencies

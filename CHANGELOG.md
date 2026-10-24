@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.7.0] - 2026-10-24
+
+### Dependencies
+- **org.springframework.cloud:spring-cloud-dependencies**: 2025.1.3 → 2025.1.4 (patch)
+- **at.yawk.lz4:lz4-java**: 1.12.0 → 1.12.1 (patch)
+- **software.amazon.awssdk:bom**: 2.57.0 → 2.57.3 (patch)
+- **io.rest-assured:rest-assured**: 6.2.0 → 6.3.0 (minor)
+- **io.rest-assured:spring-mock-mvc**: 6.2.0 → 6.3.0 (minor)
+- **io.rest-assured:json-path**: 6.2.0 → 6.3.0 (minor)
+- **io.rest-assured:xml-path**: 6.2.0 → 6.3.0 (minor)
+- **org.springdoc:springdoc-openapi-starter-webmvc-ui**: 3.1.1 → 3.2.0 (minor)
+- **org.springdoc:springdoc-openapi-starter-common**: 3.1.1 → 3.2.0 (minor)
+
 ## [11.6.0] - 2026-10-20
 
 ### Dependencies

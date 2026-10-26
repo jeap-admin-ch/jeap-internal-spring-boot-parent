@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.8.0] - 2026-10-26
+
+### Security
+- Fix vulnerabilities by overriding transitive dependency versions:
+  - **org.apache.tomcat.embed:tomcat-embed-\***: 11.0.25 → 11.0.27 (patch)
+  - **org.postgresql:postgresql**: 42.7.13 → 42.7.14 (patch)
+  - **com.google.guava:guava**: managed at 33.7.2-jre (was 32.x/33.5.0 transitively)
+  - **org.xerial.snappy:snappy-java**: managed at 1.1.10.10 (was 1.1.10.7 transitively)
+  - **org.eclipse.parsson:parsson**: managed at 1.1.8 (was 1.1.7 transitively)
+
 ## [11.7.0] - 2026-10-24
 
 ### Dependencies

@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>11.7.0-SNAPSHOT</version>
+    <version>11.8.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -56,8 +56,20 @@
         <!-- CVE-2026-68497, CVE-2026-91776, CVE-2026-91777
              (Jackson 3.x, tools.jackson namespace; not overridden by jackson-2-bom.version) -->
         <jackson-bom.version>3.2.3</jackson-bom.version>
-        <!-- CVE-2026-65182, CVE-2026-65905, CVE-2026-68525 -->
-        <tomcat.version>11.0.25</tomcat.version>
+        <!-- CVE-2026-65182, CVE-2026-65905, CVE-2026-68525, CVE-2026-76183, CVE-2026-79677, CVE-2026-101296,
+             CVE-2026-101356, CVE-2026-78383, CVE-2026-86350 -->
+        <tomcat.version>11.0.27</tomcat.version>
+        <!-- CVE-2026-107314 -->
+        <postgresql.version>42.7.14</postgresql.version>
+        <!-- CVE-2026-102554 (transitive dependency of io.confluent:kafka-avro-serializer,
+             software.amazon.glue:schema-registry-serde and others, not managed by Spring Boot) -->
+        <guava.version>33.7.2-jre</guava.version>
+        <!-- CVE-2026-90559, CVE-2026-93452, CVE-2026-108106 (transitive dependency of
+             org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
+        <snappy-java.version>1.1.10.10</snappy-java.version>
+        <!-- CVE-2026-9563 (transitive dependency of org.opensearch.client:opensearch-java,
+             not managed by Spring Boot) -->
+        <parsson.version>1.1.8</parsson.version>
         <!-- CVE-2026-59949 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
         <lz4-java.version>1.12.1</lz4-java.version>
         <!-- CVE-2026-87795 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
@@ -812,6 +824,24 @@
                 <groupId>com.github.luben</groupId>
                 <artifactId>zstd-jni</artifactId>
                 <version>${zstd-jni.version}</version>
+            </dependency>
+            <!-- Version override due to CVE-2026-102554, see the guava.version property -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <!-- Version override due to CVE-2026-90559, CVE-2026-93452, CVE-2026-108106, see the snappy-java.version property -->
+            <dependency>
+                <groupId>org.xerial.snappy</groupId>
+                <artifactId>snappy-java</artifactId>
+                <version>${snappy-java.version}</version>
+            </dependency>
+            <!-- Version override due to CVE-2026-9563, see the parsson.version property -->
+            <dependency>
+                <groupId>org.eclipse.parsson</groupId>
+                <artifactId>parsson</artifactId>
+                <version>${parsson.version}</version>
             </dependency>
             <!-- Version override due to CVE-2022-36944, see the scala-library.version property -->
             <dependency>

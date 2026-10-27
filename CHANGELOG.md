@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.9.0] - 2026-10-27
+
+### Dependencies
+- **org.xerial.snappy:snappy-java**: 1.1.10.10 → 1.1.10.12 (patch)
+- **org.eclipse.parsson:parsson**: 1.1.8 → 1.1.9 (patch)
+- **org.jacoco:jacoco-maven-plugin**: 0.8.15 → 0.8.16 (patch)
+- **ch.admin.bit.jeap:jeap-license-template**: 1.1.0 → 1.1.1 (patch)
+- **software.amazon.awssdk:bom**: 2.57.3 → 2.57.4 (patch)
+- **io.confluent:kafka-avro-serializer**: 8.3.2 → 8.4.0 (minor)
+
 ## [11.8.1] - 2026-10-27
 
 ### Dependencies

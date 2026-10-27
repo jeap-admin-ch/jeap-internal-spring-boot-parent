@@ -10,6 +10,9 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Dependencies
 - **org.springframework.boot:spring-boot-dependencies**: 4.1.1 → 4.1.2 (patch)
 
+### Removed
+- Removed the version pins for **tomcat** (11.0.27), **postgresql** (42.7.14) and **protobuf-java** (4.36.2), as they are now identical to the versions managed by Spring Boot 4.1.2. The CVE fixes from 11.8.0 (tomcat-embed, postgresql) remain in effect.
+
 ## [11.8.0] - 2026-10-26
 
 ### Security

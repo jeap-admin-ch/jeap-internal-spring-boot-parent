@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>11.9.0-SNAPSHOT</version>
+    <version>11.9.1-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -51,11 +51,11 @@
         <spring-cloud.version>2025.1.4</spring-cloud.version>
         <!-- When updating, check if any 'Version overrides due to CVEs' below can be removed -->
         <!-- CVE-2026-54515, CVE-2026-59889, CVE-2026-68497, CVE-2026-91776, CVE-2026-91777,
-             GHSA-mhm7-754m-9p8w (Jackson 2.x) -->
-        <jackson-2-bom.version>2.22.3</jackson-2-bom.version>
-        <!-- CVE-2026-68497, CVE-2026-91776, CVE-2026-91777
+             CVE-2026-110879, CVE-2026-54512, GHSA-mhm7-754m-9p8w (Jackson 2.x) -->
+        <jackson-2-bom.version>2.22.4</jackson-2-bom.version>
+        <!-- CVE-2026-68497, CVE-2026-91776, CVE-2026-91777, CVE-2026-110879, CVE-2026-54512
              (Jackson 3.x, tools.jackson namespace; not overridden by jackson-2-bom.version) -->
-        <jackson-bom.version>3.2.3</jackson-bom.version>
+        <jackson-bom.version>3.2.4</jackson-bom.version>
         <!-- CVE-2026-102554 (transitive dependency of io.confluent:kafka-avro-serializer,
              software.amazon.glue:schema-registry-serde and others, not managed by Spring Boot) -->
         <guava.version>33.7.2-jre</guava.version>

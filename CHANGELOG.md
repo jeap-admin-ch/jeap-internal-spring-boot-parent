@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.9.1] - 2026-10-28
+
+### Security
+- Fix CVE-2026-110879 and CVE-2026-54512 (deserialization of untrusted data in `DatabindContext`, SNYK-JAVA-COMFASTERXMLJACKSONCORE-21761837, SNYK-JAVA-TOOLSJACKSONCORE-21761838) by updating the Jackson BOMs:
+  - **com.fasterxml.jackson:jackson-bom** (Jackson 2.x): 2.22.3 → 2.22.4 (patch)
+  - **tools.jackson:jackson-bom** (Jackson 3.x): 3.2.3 → 3.2.4 (patch)
+
 ## [11.9.0] - 2026-10-27
 
 ### Dependencies

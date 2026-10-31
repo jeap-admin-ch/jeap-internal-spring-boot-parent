@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.9.2] - 2026-10-31
+
+### Dependencies
+- **com.github.luben:zstd-jni**: 1.5.7-24 → 1.5.7-25 (patch)
+- **au.com.dius.pact.consumer:junit5**: 4.7.5 → 4.7.6 (patch)
+- **au.com.dius.pact.provider:junit5**: 4.7.5 → 4.7.6 (patch)
+- **au.com.dius.pact.provider:maven**: 4.7.5 → 4.7.6 (patch)
+- **software.amazon.awssdk:bom**: 2.57.4 → 2.57.8 (patch)
+
 ## [11.9.1] - 2026-10-28
 
 ### Security

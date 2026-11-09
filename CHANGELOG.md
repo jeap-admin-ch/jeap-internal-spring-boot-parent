@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.12.0] - 2026-11-09
+
+### Dependencies
+- **at.yawk.lz4:lz4-java**: 1.12.1 → 1.13.0 (minor)
+- **org.codehaus.mojo:license-maven-plugin**: 2.7.1 → 2.8.0 (minor)
+- **ch.admin.bit.jeap:jeap-license-template**: 1.1.1 → 1.2.0 (minor)
+- **au.com.dius.pact.consumer:junit5**: 4.7.6 → 4.7.7 (patch)
+- **au.com.dius.pact.provider:junit5**: 4.7.6 → 4.7.7 (patch)
+- **au.com.dius.pact.provider:maven**: 4.7.6 → 4.7.7 (patch)
+- **software.amazon.awssdk:bom**: 2.57.8 → 2.57.10 (patch)
+- **com.networknt:json-schema-validator**: 3.0.8 → 3.0.9 (patch)
+- **org.eclipse.jgit:org.eclipse.jgit**: 7.8.0.202609011348-r → 7.8.1.202611041320-r (patch)
+- **software.amazon.jdbc:aws-advanced-jdbc-wrapper**: 4.5.0 → 4.6.0 (minor)
+
 ## [11.11.0] - 2026-11-03
 
 ### Dependencies

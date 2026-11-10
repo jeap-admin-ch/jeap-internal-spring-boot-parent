@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>11.12.0-SNAPSHOT</version>
+    <version>11.13.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -69,7 +69,7 @@
              not managed by Spring Boot) -->
         <parsson.version>1.1.9</parsson.version>
         <!-- CVE-2026-59949 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
-        <lz4-java.version>1.13.0</lz4-java.version>
+        <lz4-java.version>1.14.0</lz4-java.version>
         <!-- CVE-2026-87795 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
         <zstd-jni.version>1.5.7-25</zstd-jni.version>
         <!-- CVE-2022-36944 (transitive dependency of com.kjetland:mbknor-jackson-jsonschema_2.13, pulled in by
@@ -96,7 +96,7 @@
         <commons-collections4.version>4.6.0</commons-collections4.version>
         <pact-jvm.version>4.7.7</pact-jvm.version>
         <togglz.version>4.6.4</togglz.version>
-        <aws.sdk.version>2.57.10</aws.sdk.version>
+        <aws.sdk.version>2.57.11</aws.sdk.version>
         <bcpkix-jdk18on.version>1.86</bcpkix-jdk18on.version>
         <bcprov-jdk18on.version>1.86</bcprov-jdk18on.version>
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>

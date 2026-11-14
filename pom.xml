@@ -35,7 +35,7 @@
 
     <groupId>ch.admin.bit.jeap</groupId>
     <artifactId>jeap-internal-spring-boot-parent</artifactId>
-    <version>11.13.0-SNAPSHOT</version>
+    <version>11.14.0-SNAPSHOT</version>
     <name>jeap-internal-spring-boot-parent</name>
     <description>
         A common parent project for jEAP libs. Does not include any jEAP dependencies to avoid circular dependencies.
@@ -71,10 +71,10 @@
         <!-- CVE-2026-59949 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
         <lz4-java.version>1.14.0</lz4-java.version>
         <!-- CVE-2026-87795 (transitive dependency of org.apache.kafka:kafka-clients, not managed by Spring Boot) -->
-        <zstd-jni.version>1.5.7-25</zstd-jni.version>
+        <zstd-jni.version>1.5.7-26</zstd-jni.version>
         <!-- CVE-2022-36944 (transitive dependency of com.kjetland:mbknor-jackson-jsonschema_2.13, pulled in by
              io.confluent:kafka-avro-serializer and software.amazon.glue:schema-registry-serde) -->
-        <scala-library.version>3.10.0</scala-library.version>
+        <scala-library.version>3.10.1</scala-library.version>
 
         <!-- Plugin versions -->
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
@@ -82,9 +82,9 @@
         <git-commit-id-maven-plugin.version>10.0.1</git-commit-id-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.16</jacoco-maven-plugin.version>
         <sonar-maven-plugin.version>5.8.0.7211</sonar-maven-plugin.version>
-        <exec-maven-plugin.version>3.6.4</exec-maven-plugin.version>
+        <exec-maven-plugin.version>3.7.0</exec-maven-plugin.version>
         <org.honton.chas-license-maven-plugin.version>0.0.6</org.honton.chas-license-maven-plugin.version>
-        <org.codehaus.mojo-license-maven-plugin.version>2.8.0</org.codehaus.mojo-license-maven-plugin.version>
+        <org.codehaus.mojo-license-maven-plugin.version>2.9.0</org.codehaus.mojo-license-maven-plugin.version>
         <jeap-license-template.version>1.2.0</jeap-license-template.version>
         <jeap-central-publishing-maven-plugin.version>0.14.1</jeap-central-publishing-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
@@ -92,13 +92,13 @@
         <maven-plugin-plugin.version>3.16.0</maven-plugin-plugin.version>
 
         <!-- Dependency versions -->
-        <shedlock.version>7.10.1</shedlock.version>
+        <shedlock.version>7.11.0</shedlock.version>
         <commons-collections4.version>4.6.0</commons-collections4.version>
         <pact-jvm.version>4.7.7</pact-jvm.version>
         <togglz.version>4.6.4</togglz.version>
-        <aws.sdk.version>2.57.11</aws.sdk.version>
-        <bcpkix-jdk18on.version>1.86</bcpkix-jdk18on.version>
-        <bcprov-jdk18on.version>1.86</bcprov-jdk18on.version>
+        <aws.sdk.version>2.57.13</aws.sdk.version>
+        <bcpkix-jdk18on.version>1.87</bcpkix-jdk18on.version>
+        <bcprov-jdk18on.version>1.87</bcprov-jdk18on.version>
         <AmazonCorrettoCryptoProvider.version>2.5.0</AmazonCorrettoCryptoProvider.version>
         <rest-assured.version>6.3.0</rest-assured.version>
         <logstash.version>9.0</logstash.version>
@@ -107,7 +107,7 @@
         <jimfs.version>1.3.2</jimfs.version>
         <networknt-json-schema-validator.version>3.0.9</networknt-json-schema-validator.version>
         <commons-io.version>2.22.0</commons-io.version>
-        <kafka-avro-serializer.version>8.4.0</kafka-avro-serializer.version>
+        <kafka-avro-serializer.version>8.4.1</kafka-avro-serializer.version>
         <testcontainers-floci.version>2.17.0</testcontainers-floci.version>
         <avro.version>1.12.2</avro.version>
         <commons-text.version>1.15.0</commons-text.version>
@@ -129,8 +129,8 @@
         <aws-advanced-jdbc-wrapper.version>4.6.0</aws-advanced-jdbc-wrapper.version>
         <guava-testlib.version>33.8.0-jre</guava-testlib.version>
         <file-management.version>3.2.0</file-management.version>
-        <schema-registry-serde.version>2.0.1</schema-registry-serde.version>
-        <aws-msk-iam-auth.version>2.3.9</aws-msk-iam-auth.version>
+        <schema-registry-serde.version>2.0.2</schema-registry-serde.version>
+        <aws-msk-iam-auth.version>2.4.0</aws-msk-iam-auth.version>
 
         <!-- Config -->
         <maven.javadoc.skip>true</maven.javadoc.skip>

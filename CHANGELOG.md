@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.14.0] - 2026-11-14
+
+### Dependencies
+- **com.github.luben:zstd-jni**: 1.5.7-25 → 1.5.7-26 (patch)
+- **org.scala-lang:scala-library**: 3.10.0 → 3.10.1 (patch)
+- **org.codehaus.mojo:exec-maven-plugin**: 3.6.4 → 3.7.0 (minor)
+- **org.codehaus.mojo:license-maven-plugin**: 2.8.0 → 2.9.0 (minor)
+- **net.javacrumbs.shedlock:shedlock-spring**: 7.10.1 → 7.11.0 (minor)
+- **net.javacrumbs.shedlock:shedlock-provider-jdbc-template**: 7.10.1 → 7.11.0 (minor)
+- **software.amazon.awssdk:bom**: 2.57.11 → 2.57.13 (patch)
+- **org.bouncycastle:bcpkix-jdk18on**: 1.86 → 1.87 (minor)
+- **org.bouncycastle:bcprov-jdk18on**: 1.86 → 1.87 (minor)
+- **io.confluent:kafka-avro-serializer**: 8.4.0 → 8.4.1 (patch)
+- **software.amazon.glue:schema-registry-serde**: 2.0.1 → 2.0.2 (patch)
+- **software.amazon.msk:aws-msk-iam-auth**: 2.3.9 → 2.4.0 (minor)
+
 ## [11.13.0] - 2026-11-10
 
 ### Dependencies

@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.15.0] - 2026-11-17
+
+### Dependencies
+- **com.github.luben:zstd-jni**: 1.5.7-26 → 1.5.7-28 (patch)
+- **ch.admin.bit.jeap:jeap-license-template**: 1.2.0 → 1.3.0 (minor)
+- **software.amazon.awssdk:bom**: 2.57.13 → 2.59.1 (minor)
+- **org.apache.maven:maven-artifact**: 3.10.0 → 3.10.1 (patch)
+- **org.apache.maven:maven-compat**: 3.10.0 → 3.10.1 (patch)
+- **org.apache.maven:maven-core**: 3.10.0 → 3.10.1 (patch)
+- **org.apache.maven:maven-plugin-api**: 3.10.0 → 3.10.1 (patch)
+- **org.codehaus.plexus:plexus-xml**: 4.2.0 → 4.2.1 (patch)
+- **org.opensearch.client:opensearch-java**: 3.10.0 → 3.11.0 (minor)
+
 ## [11.14.0] - 2026-11-14
 
 ### Dependencies

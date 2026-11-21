@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [11.17.0] - 2026-11-21
+
+### Dependencies
+- **at.yawk.lz4:lz4-java**: 1.14.0 → 1.14.1 (patch)
+- **org.sonarsource.scanner.maven:sonar-maven-plugin**: 5.8.0.7211 → 5.9.0.7382 (minor)
+- **ch.admin.bit.jeap:jeap-license-template**: 1.3.0 → 1.4.0 (minor)
+- **software.amazon.awssdk:bom**: 2.59.1 → 2.59.3 (patch)
+- **org.codehaus.plexus:plexus-utils**: 4.1.0 → 4.2.0 (minor)
+- **org.opensearch:opensearch-testcontainers**: 4.1.0 → 4.1.1 (patch)
+
 ## [11.16.0] - 2026-11-19
 
 ### Changed

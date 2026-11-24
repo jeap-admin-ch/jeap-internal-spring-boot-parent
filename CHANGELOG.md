@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [12.0.0] - 2026-11-24
+
+### Dependencies
+- **org.springframework.cloud:spring-cloud-dependencies**: 2025.1.4 → 2026.0.0 (major)
+- **org.springframework.ai:spring-ai-bom**: 2.0.2 → 2.1.0 (minor)
+- **ch.admin.bit.jeap:jeap-license-template**: 1.4.0 → 1.5.0 (minor)
+- **software.amazon.awssdk:bom**: 2.59.3 → 2.59.7 (patch)
+- **org.apache.maven:maven-artifact**: 3.10.1 → 3.10.2 (patch)
+- **org.apache.maven:maven-compat**: 3.10.1 → 3.10.2 (patch)
+- **org.apache.maven:maven-core**: 3.10.1 → 3.10.2 (patch)
+- **org.apache.maven:maven-plugin-api**: 3.10.1 → 3.10.2 (patch)
+- **org.springdoc:springdoc-openapi-starter-webmvc-ui**: 3.2.0 → 3.2.1 (patch)
+- **org.springdoc:springdoc-openapi-starter-common**: 3.2.0 → 3.2.1 (patch)
+- **software.amazon.jdbc:aws-advanced-jdbc-wrapper**: 4.6.0 → 4.7.0 (minor)
+- **software.amazon.glue:schema-registry-serde**: 2.0.2 → 3.0.1 (major)
+
 ## [11.17.0] - 2026-11-21
 
 ### Dependencies

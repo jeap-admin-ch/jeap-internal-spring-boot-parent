@@ -7,7 +7,7 @@ library shares the same Java baseline, Spring Boot version and build conventions
 contains **no jEAP dependencies** to avoid circular dependencies between the jEAP libraries and their
 own build parent.
 
-* Inherits `spring-boot-dependencies` `4.1.0` and imports `spring-cloud-dependencies`, the AWS SDK
+* Inherits `spring-boot-dependencies` `4.2.0` and imports `spring-cloud-dependencies`, the AWS SDK
   BOM and the Testcontainers BOM
 * Sets the Java / `maven.compiler.release` baseline to `25`
 * Manages additional dependencies not covered by Spring Boot (ShedLock, Togglz, Pact, Bouncy Castle,

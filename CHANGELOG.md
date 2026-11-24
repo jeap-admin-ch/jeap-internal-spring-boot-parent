@@ -7,7 +7,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [12.0.0] - 2026-11-24
 
+### Changed
+- Removed the `maven-compiler-plugin.version` pin: Spring Boot 4.2.0 manages the same version (3.16.0)
+
 ### Dependencies
+- **org.springframework.boot:spring-boot-dependencies**: 4.1.2 → 4.2.0 (minor)
 - **org.springframework.cloud:spring-cloud-dependencies**: 2025.1.4 → 2026.0.0 (major)
 - **org.springframework.ai:spring-ai-bom**: 2.0.2 → 2.1.0 (minor)
 - **ch.admin.bit.jeap:jeap-license-template**: 1.4.0 → 1.5.0 (minor)

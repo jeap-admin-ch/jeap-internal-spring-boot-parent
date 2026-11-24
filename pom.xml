@@ -30,7 +30,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- Also update the property spring-boot.version! -->
-        <version>4.1.2</version>
+        <version>4.2.0</version>
     </parent>
 
     <groupId>ch.admin.bit.jeap</groupId>
@@ -47,7 +47,7 @@
         <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Also update the spring-boot-dependencies parent version! -->
-        <spring-boot.version>4.1.2</spring-boot.version>
+        <spring-boot.version>4.2.0</spring-boot.version>
         <spring-cloud.version>2026.0.0</spring-cloud.version>
         <!-- Check against the spring-boot.version above when bumping: a Spring AI pre-release can require a
              newer Spring Boot than this parent currently pins -->
@@ -78,7 +78,6 @@
 
         <!-- Plugin versions -->
         <lombok.maven.version>1.18.20.0</lombok.maven.version>
-        <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
         <git-commit-id-maven-plugin.version>10.0.1</git-commit-id-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.16</jacoco-maven-plugin.version>
         <sonar-maven-plugin.version>5.9.0.7382</sonar-maven-plugin.version>

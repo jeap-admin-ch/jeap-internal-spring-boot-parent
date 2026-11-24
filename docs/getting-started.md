@@ -17,7 +17,7 @@ dependency, plugin and build configuration.
 ## What you get
 
 - **Spring Boot baseline** — inherited from `org.springframework.boot:spring-boot-dependencies`
-  (`4.1.0`; the POM also keeps a `spring-boot.version` property for reference), so most dependency
+  (`4.2.0`; the POM also keeps a `spring-boot.version` property for reference), so most dependency
   versions come straight from the Spring Boot BOM. See the
   [Spring Boot dependency versions](https://docs.spring.io/spring-boot/appendix/dependency-versions/index.html).
 - **Java baseline** — `java.version` and `maven.compiler.release` set to `25`.

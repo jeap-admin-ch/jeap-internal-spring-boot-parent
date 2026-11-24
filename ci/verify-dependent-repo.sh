@@ -123,7 +123,7 @@ mvnw() {
     if [[ -n "${SETTINGS_FILE}" ]]; then
         settings_args=(-s "${SETTINGS_FILE}")
     fi
-    ./mvnw -B "${settings_args[@]}" "$@"
+    ./mvnw -U -B "${settings_args[@]}" "$@"
 }
 
 set_parent_version() {

@@ -30,7 +30,8 @@ docs/              # Focused, one-topic-per-file documentation
 - `<dependencyManagement>` — versions for dependencies not managed by Spring Boot, plus overrides.
 - `<build><pluginManagement>` and `<build><plugins>` — shared plugin configuration.
 - `<profiles>` — version bumping (`bump-patch/minor/major-version`), consumer-driven contract
-  publishing (`cdct-enable-publishing-*`) and release/Maven-Central publishing.
+  publishing (`cdct-enable-publishing-*`) and Maven Central publishing (`maven-central-publish`, which jEAP
+  builds do not activate).
 
 ## Conventions
 

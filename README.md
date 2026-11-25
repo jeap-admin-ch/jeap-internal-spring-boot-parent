@@ -13,8 +13,8 @@ own build parent.
 * Manages additional dependencies not covered by Spring Boot (ShedLock, Togglz, Pact, Bouncy Castle,
   rest-assured, Logstash, Amazon Corretto Crypto Provider) plus CVE-driven version overrides
 * Manages build plugins (compiler, Surefire/Failsafe, JaCoCo, git-commit-id, Lombok delombok, source
-  and Javadoc, Pact, license compliance, GPG and Maven Central publishing)
-* Provides reusable profiles for version bumping, consumer-driven contract publishing and releasing
+  and Javadoc, Pact and license compliance)
+* Provides reusable profiles for version bumping and consumer-driven contract publishing
 
 For the full jEAP usage documentation see *
 *[https://jeap-admin-ch.github.io/docs/using-jeap](https://jeap-admin-ch.github.io/docs/using-jeap)**.

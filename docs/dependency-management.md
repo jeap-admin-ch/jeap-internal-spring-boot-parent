@@ -65,7 +65,7 @@ behind the version the Spring Boot BOM manages. Run it locally with `ci/check-ve
 - `au.com.dius.pact.provider:maven` for contract publishing
 - License compliance (`org.honton.chas:license-maven-plugin`) and third-party license generation
   (`org.codehaus.mojo:license-maven-plugin` with the `jeap-license-template`)
-- `maven-gpg-plugin` and `jeap-central-publishing-maven-plugin` for Maven Central releases
+- `maven-gpg-plugin` and `jeap-central-publishing-maven-plugin`, used only by the `maven-central-publish` profile
 
 ## Profiles
 
@@ -74,7 +74,7 @@ behind the version the Spring Boot BOM manages. Run it locally with `ci/check-ve
 - `cdct-enable-publishing-jenkins` / `cdct-enable-publishing-local` — enable publishing of
   consumer-driven contracts and verification results.
 - `internal-parent-build-only` — license compliance/third-party generation for internal builds.
-- `maven-central-publish` — GPG signing and publishing to Maven Central.
+- `maven-central-publish` — GPG signing and publishing to Maven Central. jEAP builds do not activate it.
 
 ## Related
 

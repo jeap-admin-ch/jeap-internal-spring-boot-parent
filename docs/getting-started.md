@@ -25,8 +25,7 @@ dependency, plugin and build configuration.
 - **A `provided`-scoped Lombok dependency** added to every project, plus delombok/Javadoc/source-jar
   wiring for publishing.
 - **Reusable profiles** — `bump-patch-version` / `bump-minor-version` / `bump-major-version` for
-  version bumps, `cdct-enable-publishing-*` for consumer-driven contract tests, and
-  `maven-central-publish` for releasing.
+  version bumps and `cdct-enable-publishing-*` for consumer-driven contract tests.
 
 ## Difference vs `jeap-spring-boot-parent`
 
